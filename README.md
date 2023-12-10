@@ -26,10 +26,14 @@ Anda memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun,
 ## Teknologi:
 
 - HTML
-- PHP 5
+- PHP 7.4.33
 - CSS
 - Javascript
+- jQuery Migrate 3.4.0
 - jQuery 2.2.0
 - jQuery UI 1.12.1
-- Bootstrap
+- Bootstrap 4.3.1
 - MYSQL
+- Font Awesome 4.7.0
+- Select2
+- cbox
