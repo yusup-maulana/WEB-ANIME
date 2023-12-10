@@ -2,24 +2,22 @@
 date_default_timezone_set('Asia/Jakarta');
 //action.php
 
-include('database_connection.php');
+include("../database_connection.php");
+include("database_connection.php");
 
-if(isset($_POST["action"]))
-{
-	
+if (isset($_POST["action"])) {
 
 
-	if($_POST["action"] == "fetch_single")
-	{
+
+	if ($_POST["action"] == "fetch_single") {
 		// tabel anime
 		$query = "
-		SELECT * FROM anime WHERE id = '".$_POST["id"]."'
+		SELECT * FROM anime WHERE id = '" . $_POST["id"] . "'
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
 		$result = $statement->fetchAll();
-		foreach($result as $row)
-		{
+		foreach ($result as $row) {
 			$output['vid'] = $row['id'];
 			$output['vjudul'] = $row['judul'];
 			$output['valternative_judul'] = $row['alternative_judul'];
@@ -45,74 +43,64 @@ if(isset($_POST["action"]))
 		// tabel streaming episode
 		$getlasteps = "";
 		$query = "
-		SELECT * FROM streaming WHERE id_judul = '".$_POST["id"]."' group by episode ORDER BY MAX(episode)";
+		SELECT * FROM streaming WHERE id_judul = '" . $_POST["id"] . "' group by episode ORDER BY MAX(episode)";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		while($row = $statement->fetch())
-		{
-			$output['vlink'][]= $row['link'];
-			$output['vepisode'][]= $row['episode'];
-			$output['vserver'][]= $row['server'];
+		while ($row = $statement->fetch()) {
+			$output['vlink'][] = $row['link'];
+			$output['vepisode'][] = $row['episode'];
+			$output['vserver'][] = $row['server'];
 			$getlasteps = $row['episode'];
 		}
 
 		// tabel streaming server
 		$query = "
-		SELECT * FROM streaming WHERE id_judul = '".$_POST["id"]."' and  episode='".$getlasteps."' ";
+		SELECT * FROM streaming WHERE id_judul = '" . $_POST["id"] . "' and  episode='" . $getlasteps . "' ";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		while($row = $statement->fetch())
-		{
-			$output['vslink'][]= $row['link'];
-			$output['vsepisode'][]= $row['episode'];
-			$output['vsserver'][]= $row['server'];
+		while ($row = $statement->fetch()) {
+			$output['vslink'][] = $row['link'];
+			$output['vsepisode'][] = $row['episode'];
+			$output['vsserver'][] = $row['server'];
 		}
 
 
 		// tabel get number download eps
-			$query2 = "SELECT * FROM download WHERE id_judul = '".$_POST["id"]."' and tipe='eps' order by episode";
-			$statement2 = $connect->prepare($query2);
-			$statement2->execute();
-			while($row2 = $statement2->fetch())
-			{
-				$output['vgetarrdownload'][]=array($row2['episode'],$row2['link'],$row2['server'],$row2['quality']);
-			}
+		$query2 = "SELECT * FROM download WHERE id_judul = '" . $_POST["id"] . "' and tipe='eps' order by episode";
+		$statement2 = $connect->prepare($query2);
+		$statement2->execute();
+		while ($row2 = $statement2->fetch()) {
+			$output['vgetarrdownload'][] = array($row2['episode'], $row2['link'], $row2['server'], $row2['quality']);
+		}
 
 
 		// tabel get number download batch
-			$query3 = "SELECT * FROM download WHERE id_judul = '".$_POST["id"]."' and tipe='batch' order by episode";
-			$statement3 = $connect->prepare($query3);
-			$statement3->execute();
-			while($row3 = $statement3->fetch())
-			{
-				$output['vbatchdownload'][]=array($row3['ket'],$row3['link'],$row3['server'],$row3['quality']);
-			}
+		$query3 = "SELECT * FROM download WHERE id_judul = '" . $_POST["id"] . "' and tipe='batch' order by episode";
+		$statement3 = $connect->prepare($query3);
+		$statement3->execute();
+		while ($row3 = $statement3->fetch()) {
+			$output['vbatchdownload'][] = array($row3['ket'], $row3['link'], $row3['server'], $row3['quality']);
+		}
 
 		echo json_encode($output);
 	}
 
 
-if($_POST["action"] == "getbtnserver")
-	{
+	if ($_POST["action"] == "getbtnserver") {
 		// tabel streaming server
-		$query = "SELECT * FROM streaming WHERE id_judul = '".$_POST["id_judul"]."' and  FORMAT(episode, 2) = FORMAT('".$_POST["episode"]."', 2) ";
+		$query = "SELECT * FROM streaming WHERE id_judul = '" . $_POST["id_judul"] . "' and  FORMAT(episode, 2) = FORMAT('" . $_POST["episode"] . "', 2) ";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		while($row = $statement->fetch())
-		{
-			$output['vslink'][]= $row['link'];
-			$output['vsepisode'][]= $row['episode'];
-			$output['vsserver'][]= $row['server'];
+		while ($row = $statement->fetch()) {
+			$output['vslink'][] = $row['link'];
+			$output['vsepisode'][] = $row['episode'];
+			$output['vsserver'][] = $row['server'];
 		}
 
 
 
 		echo json_encode($output);
 	}
-
-
-
-}else{echo '<p>Error, bukan action</p>';}
-
-
-?>
+} else {
+	echo '<p>Error, bukan action</p>';
+}
