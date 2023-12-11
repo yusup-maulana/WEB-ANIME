@@ -6,22 +6,19 @@
 
 Ketika pertama kali mengunjungi halaman depan template, pengunjung akan langsung disuguhi dengan tampilan full-width slider yang elegan. Di sini, Anda dapat menampilkan sejumlah video unggulan yang ingin Anda tampilkan kepada pengguna Anda.
 
-## Tampilan yang Detail dan Menawan
+## Tampilan yang unik dan single Page
 
+Dengan menerapkan teknologi Single Page Application (SPA), pengalaman pengguna ditingkatkan. Halaman ini meminimalkan kebutuhan untuk mereload seluruh halaman, sehingga memberikan navigasi yang lebih mulus dan efisien.
 Saat menggulir halaman, pengunjung akan dengan cepat menyadari detail tampilan yang sangat apik. Latar belakang web disusun dari sekelompok gradiasi yang dirancang untuk tidak membuat mata lelah. Ilustrasi gambar di web dihadirkan dalam format kotak, memberikan tampilan yang rapi dan teratur. Demikian juga dengan judul-judul posting yang dibingkai dengan warna gelap yang mencolok, menambahkan sentuhan visual yang menarik.
 
 ## Kustomisasi yang Luas
 
-Anda memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun, genre, musim, dan studio. Ini memungkinkan Anda untuk mengatur konten dengan rapi dan memudahkan pengguna dalam menemukan apa yang mereka cari.
+Memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun, genre, musim, type, level dan studio. Ini memungkinkan Anda untuk mengatur konten dengan rapi dan memudahkan pengguna dalam menemukan apa yang mereka cari.
 
-## Fitur Unggulan:
+## admin page:
 
-- Pratinjau konten dari resolusi gambar HD melalui slider lebar penuh.
-- Dapat diakses dengan baik melalui perangkat mobile, tablet, laptop, dan PC.
-- Icons yang intuitif untuk mempercepat pengunjung dalam menavigasi situs.
-- Efek hover yang mempercantik tampilan web sekaligus membantu pengguna mengenali tautan.
-- Cocok digunakan untuk usaha layanan web video pihak ketiga.
-- Admin page yang sederhana dan efisien untuk mengelola tautan dengan presisi, sangat ramah pengguna.
+usernam : admin
+password : admin
 
 ## Teknologi:
 
