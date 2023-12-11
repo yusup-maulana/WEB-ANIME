@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Okt 2022 pada 19.52
--- Versi Server: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Dec 11, 2023 at 10:09 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `anime`
+-- Table structure for table `anime`
 --
 
 CREATE TABLE `anime` (
@@ -47,10 +48,10 @@ CREATE TABLE `anime` (
   `ket` longtext NOT NULL,
   `level` varchar(1) NOT NULL,
   `tanggal_update` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `anime`
+-- Dumping data for table `anime`
 --
 
 INSERT INTO `anime` (`id`, `judul`, `alternative_judul`, `gambar`, `studio`, `id_genre`, `tanggalrilis`, `tahun`, `musim`, `id_fansub`, `durasi`, `status`, `jadwal`, `iu`, `tipe`, `tagar`, `totaleps`, `ket`, `level`, `tanggal_update`) VALUES
@@ -179,7 +180,7 @@ INSERT INTO `anime` (`id`, `judul`, `alternative_judul`, `gambar`, `studio`, `id
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_tonton`
+-- Table structure for table `data_tonton`
 --
 
 CREATE TABLE `data_tonton` (
@@ -187,12 +188,12 @@ CREATE TABLE `data_tonton` (
   `id_user` varchar(15) NOT NULL,
   `id_anime` varchar(10) NOT NULL,
   `episode` int(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_user`
+-- Table structure for table `data_user`
 --
 
 CREATE TABLE `data_user` (
@@ -200,12 +201,12 @@ CREATE TABLE `data_user` (
   `nama` varchar(30) NOT NULL,
   `level` varchar(2) NOT NULL,
   `email` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `download`
+-- Table structure for table `download`
 --
 
 CREATE TABLE `download` (
@@ -218,10 +219,10 @@ CREATE TABLE `download` (
   `tanggal_update` datetime NOT NULL,
   `tipe` varchar(10) NOT NULL,
   `ket` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `download`
+-- Dumping data for table `download`
 --
 
 INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`, `tanggal_update`, `tipe`, `ket`) VALUES
@@ -2477,7 +2478,7 @@ INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`
 (2317, '314', 'SB', 6, 'https://cloudemb.com/d/q96lw62uvafx.html', '720p', '2021-08-31 19:09:07', 'eps', ''),
 (2318, '314', 'SB', 7, 'https://cloudemb.com/d/05k2ll9jm6v5.html', '720p', '2021-08-31 19:09:07', 'eps', ''),
 (2319, '314', 'SB', 8, 'https://cloudemb.com/d/h8mcm2sjdary.html', '720p', '2021-08-31 19:09:07', 'eps', ''),
-(2320, '314', 'SB', 9, 'https://tubesb.com/d/pyrro1uvztid.html"', '720p', '2021-08-31 19:09:07', 'eps', ''),
+(2320, '314', 'SB', 9, 'https://tubesb.com/d/pyrro1uvztid.html\"', '720p', '2021-08-31 19:09:07', 'eps', ''),
 (2321, '315', 'NS', 1, 'https://ninjastream.to/download/JdpmL9JyRAe7K', '720p', '2021-08-31 19:17:45', 'eps', ''),
 (2322, '315', 'NS', 2, 'https://ninjastream.to/download/pnXQpELw0ZqeE', '720p', '2021-08-31 19:17:45', 'eps', ''),
 (2323, '315', 'NS', 3, 'https://ninjastream.to/download/gLeZyVrK4mrKN', '720p', '2021-08-31 19:17:45', 'eps', ''),
@@ -2597,7 +2598,7 @@ INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`
 (2437, '318', 'SB', 19, 'https://cloudemb.com/d/nit9gq6kcuzv.html', '720p', '2021-08-31 20:53:01', 'eps', ''),
 (2438, '318', 'SB', 20, 'https://cloudemb.com/d/mm28hvtavieu.html', '720p', '2021-08-31 20:53:01', 'eps', ''),
 (2439, '318', 'SB', 21, 'https://cloudemb.com/d/exms917pcse8.html', '720p', '2021-08-31 20:53:01', 'eps', ''),
-(2440, '318', 'SB', 22, 'https://tubesb.com/d/ls4jdm2cdadd.html"', '720p', '2021-08-31 20:53:01', 'eps', ''),
+(2440, '318', 'SB', 22, 'https://tubesb.com/d/ls4jdm2cdadd.html\"', '720p', '2021-08-31 20:53:01', 'eps', ''),
 (2441, '319', 'NS', 1, 'https://ninjastream.to/download/9dbmXMBggAyEO', '720p', '2021-09-01 12:39:26', 'eps', ''),
 (2442, '319', 'NS', 2, 'https://ninjastream.to/download/n9JZrD8v7AG72', '720p', '2021-09-01 12:39:26', 'eps', ''),
 (2443, '319', 'NS', 3, 'https://ninjastream.to/download/72lQbM0dkAe9G', '720p', '2021-09-01 12:39:26', 'eps', ''),
@@ -2765,7 +2766,7 @@ INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`
 (2612, '305', 'SB', 10, 'https://tubesb.com/d/ijlrltonvqg1.html', '720p', '2021-09-07 17:49:53', 'eps', ''),
 (2613, '306', 'NS', 10, 'https://ninjastream.to/download/ExamDP9z3mR8M', '720p', '2021-09-07 17:59:05', 'eps', ''),
 (2614, '306', 'SB', 10, 'https://tubesb.com/d/j4esavy2wy43.html', '720p', '2021-09-07 17:59:54', 'eps', ''),
-(2615, '270', 'NS', 9, 'https://ninjastream.to/download/lWJQjP5j4mdXn', '720p', '2021-09-07 18:11:35', 'eps', ''),
+(2615, '270', 'NS', 9, 'https://ninjastream.to/download/lWJQjP5j4mdXn', '720p', '2023-12-11 13:52:19', 'eps', ''),
 (2616, '270', 'SB', 9, 'https://tubesb.com/d/ztqilsqs6ioc.html', '720p', '2021-09-07 18:12:12', 'eps', ''),
 (2617, '323', 'NS', 1, 'https://ninjastream.to/download/Lo2Q8gaoaAqY5', '720p', '2021-09-07 13:41:04', 'eps', ''),
 (2618, '323', 'NS', 2, 'https://ninjastream.to/download/RkaA5r0j4QVnp', '720p', '2021-09-07 13:41:04', 'eps', ''),
@@ -3239,7 +3240,7 @@ INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fansub`
+-- Table structure for table `fansub`
 --
 
 CREATE TABLE `fansub` (
@@ -3247,10 +3248,10 @@ CREATE TABLE `fansub` (
   `nama` varchar(35) NOT NULL,
   `gambar` varchar(50) NOT NULL,
   `ket` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `fansub`
+-- Dumping data for table `fansub`
 --
 
 INSERT INTO `fansub` (`id`, `nama`, `gambar`, `ket`) VALUES
@@ -3280,16 +3281,16 @@ INSERT INTO `fansub` (`id`, `nama`, `gambar`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `genre`
+-- Table structure for table `genre`
 --
 
 CREATE TABLE `genre` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `genre`
+-- Dumping data for table `genre`
 --
 
 INSERT INTO `genre` (`id`, `nama`) VALUES
@@ -3338,7 +3339,7 @@ INSERT INTO `genre` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `komentar`
+-- Table structure for table `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -3346,12 +3347,32 @@ CREATE TABLE `komentar` (
   `id_anime` varchar(15) NOT NULL,
   `keterangan` longtext NOT NULL,
   `id_user` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `streaming`
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `user` varchar(35) DEFAULT NULL,
+  `pass` varchar(8) DEFAULT NULL,
+  `level` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `user`, `pass`, `level`) VALUES
+(1, 'admin', 'admin', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `streaming`
 --
 
 CREATE TABLE `streaming` (
@@ -3362,10 +3383,10 @@ CREATE TABLE `streaming` (
   `link` longtext NOT NULL,
   `lapor` varchar(1) NOT NULL,
   `tanggal_update` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `streaming`
+-- Dumping data for table `streaming`
 --
 
 INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`, `tanggal_update`) VALUES
@@ -7063,50 +7084,50 @@ INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`,
 (3753, '285', 'FM-720p', 42, 'https://www.dutrag.com/v/r451xbegx-213r4', '', '0000-00-00 00:00:00'),
 (3754, '285', 'FM-720p', 43, 'https://www.dutrag.com/v/7mn1jsgqml1-w70', '', '0000-00-00 00:00:00'),
 (3755, '285', 'FM-720p', 44, 'https://www.dutrag.com/v/0d0gjslqk5-xmn2', '', '0000-00-00 00:00:00'),
-(3756, '285', 'AB-720p', 1, 'https://short.ink/aXcOh3Ogy">1</button>', '', '0000-00-00 00:00:00'),
-(3757, '285', 'AB-720p', 2, 'https://short.ink/ei-8ES08R">2</button>', '', '0000-00-00 00:00:00'),
-(3758, '285', 'AB-720p', 3, 'https://short.ink/v3DSDlBkc">3</button>', '', '0000-00-00 00:00:00'),
-(3759, '285', 'AB-720p', 4, 'https://short.ink/Jj-O8JBMp">4</button>', '', '0000-00-00 00:00:00'),
-(3760, '285', 'AB-720p', 5, 'https://short.ink/PaVp9ik_3">5</button>', '', '0000-00-00 00:00:00'),
-(3761, '285', 'AB-720p', 6, 'https://short.ink/yBYHt6zdZ">6</button>', '', '0000-00-00 00:00:00'),
-(3762, '285', 'AB-720p', 7, 'https://short.ink/BhbV6r_Ql">7</button>', '', '0000-00-00 00:00:00'),
-(3763, '285', 'AB-720p', 8, 'https://short.ink/HFDyXpg8Zc">8</button>', '', '0000-00-00 00:00:00'),
-(3764, '285', 'AB-720p', 9, 'https://short.ink/rDIyht-Ex">9</button>', '', '0000-00-00 00:00:00'),
-(3765, '285', 'AB-720p', 10, 'https://short.ink/KM0gfVP42">10</button>', '', '0000-00-00 00:00:00'),
-(3766, '285', 'AB-720p', 11, 'https://short.ink/9P0z_eQHe">11</button>', '', '0000-00-00 00:00:00'),
-(3767, '285', 'AB-720p', 12, 'https://short.ink/JiW--0IxL">12</button>', '', '0000-00-00 00:00:00'),
-(3768, '285', 'AB-720p', 13, 'https://short.ink/6ajUhiYp8">13</button>', '', '0000-00-00 00:00:00'),
-(3769, '285', 'AB-720p', 14, 'https://short.ink/QFvOJGBc2">14</button>', '', '0000-00-00 00:00:00'),
-(3770, '285', 'AB-720p', 15, 'https://short.ink/mlzQloILO">15</button>', '', '0000-00-00 00:00:00'),
-(3771, '285', 'AB-720p', 16, 'https://short.ink/MLZseAX5Q">16</button>', '', '0000-00-00 00:00:00'),
-(3772, '285', 'AB-720p', 17, 'https://short.ink/eKP3kNytz">17</button>', '', '0000-00-00 00:00:00'),
-(3773, '285', 'AB-720p', 18, 'https://short.ink/Z74ALbaoU">18</button>', '', '0000-00-00 00:00:00'),
-(3774, '285', 'AB-720p', 19, 'https://short.ink/GwHWdA2MI">19</button>', '', '0000-00-00 00:00:00'),
-(3775, '285', 'AB-720p', 20, 'https://short.ink/6PA41SsCh">20</button>', '', '0000-00-00 00:00:00'),
-(3776, '285', 'AB-720p', 21, 'https://short.ink/ocPwmHmvy">21</button>', '', '0000-00-00 00:00:00'),
-(3777, '285', 'AB-720p', 22, 'https://short.ink/Ipklun-dP">22</button>', '', '0000-00-00 00:00:00'),
-(3778, '285', 'AB-720p', 23, 'https://short.ink/Cf1BF31xu">23</button>', '', '0000-00-00 00:00:00'),
-(3779, '285', 'AB-720p', 24, 'https://short.ink/B37ub2CRM">24</button>', '', '0000-00-00 00:00:00'),
-(3780, '285', 'AB-720p', 25, 'https://short.ink/aZtTFQ776">25</button>', '', '0000-00-00 00:00:00'),
-(3781, '285', 'AB-720p', 26, 'https://short.ink/P8Kiof67T">26</button>', '', '0000-00-00 00:00:00'),
-(3782, '285', 'AB-720p', 27, 'https://short.ink/1p06AFkU0">27</button>', '', '0000-00-00 00:00:00'),
-(3783, '285', 'AB-720p', 28, 'https://short.ink/dthCI6Jsm">28</button>', '', '0000-00-00 00:00:00'),
-(3784, '285', 'AB-720p', 29, 'https://short.ink/XqCTqqOqP">29</button>', '', '0000-00-00 00:00:00'),
-(3785, '285', 'AB-720p', 30, 'https://short.ink/TKGQhOoym">30</button>', '', '0000-00-00 00:00:00'),
-(3786, '285', 'AB-720p', 31, 'https://short.ink/kiho0O9i8">31</button>', '', '0000-00-00 00:00:00'),
-(3787, '285', 'AB-720p', 32, 'https://short.ink/U5ILEd79n">32</button>', '', '0000-00-00 00:00:00'),
-(3788, '285', 'AB-720p', 33, 'https://short.ink/K3FZwkbYH">33</button>', '', '0000-00-00 00:00:00'),
-(3789, '285', 'AB-720p', 34, 'https://short.ink/krkQKH7oA">34</button>', '', '0000-00-00 00:00:00'),
-(3790, '285', 'AB-720p', 35, 'https://short.ink/mbcsEqVX-">35</button>', '', '0000-00-00 00:00:00'),
-(3791, '285', 'AB-720p', 36, 'https://short.ink/CxLwgdAee">36</button>', '', '0000-00-00 00:00:00'),
-(3792, '285', 'AB-720p', 37, 'https://short.ink/i10vaUx1D">37</button>', '', '0000-00-00 00:00:00'),
-(3793, '285', 'AB-720p', 38, 'https://short.ink/Dnk9u1to6">38</button>', '', '0000-00-00 00:00:00'),
-(3794, '285', 'AB-720p', 39, 'https://short.ink/duSxTUmKd">39</button>', '', '0000-00-00 00:00:00'),
-(3795, '285', 'AB-720p', 40, 'https://short.ink/oY8_vbWV-">40</button>', '', '0000-00-00 00:00:00'),
-(3796, '285', 'AB-720p', 41, 'https://short.ink/O9xA2AQ9R">41</button>', '', '0000-00-00 00:00:00'),
-(3797, '285', 'AB-720p', 42, 'https://short.ink/qk7iGE4ns">42</button>', '', '0000-00-00 00:00:00'),
-(3798, '285', 'AB-720p', 43, 'https://short.ink/kvQcnsd18">43</button>', '', '0000-00-00 00:00:00'),
-(3799, '285', 'AB-720p', 44, 'https://short.ink/SzEDO6tRX">44</button>', '', '0000-00-00 00:00:00'),
+(3756, '285', 'AB-720p', 1, 'https://short.ink/aXcOh3Ogy\">1</button>', '', '0000-00-00 00:00:00'),
+(3757, '285', 'AB-720p', 2, 'https://short.ink/ei-8ES08R\">2</button>', '', '0000-00-00 00:00:00'),
+(3758, '285', 'AB-720p', 3, 'https://short.ink/v3DSDlBkc\">3</button>', '', '0000-00-00 00:00:00'),
+(3759, '285', 'AB-720p', 4, 'https://short.ink/Jj-O8JBMp\">4</button>', '', '0000-00-00 00:00:00'),
+(3760, '285', 'AB-720p', 5, 'https://short.ink/PaVp9ik_3\">5</button>', '', '0000-00-00 00:00:00'),
+(3761, '285', 'AB-720p', 6, 'https://short.ink/yBYHt6zdZ\">6</button>', '', '0000-00-00 00:00:00'),
+(3762, '285', 'AB-720p', 7, 'https://short.ink/BhbV6r_Ql\">7</button>', '', '0000-00-00 00:00:00'),
+(3763, '285', 'AB-720p', 8, 'https://short.ink/HFDyXpg8Zc\">8</button>', '', '0000-00-00 00:00:00'),
+(3764, '285', 'AB-720p', 9, 'https://short.ink/rDIyht-Ex\">9</button>', '', '0000-00-00 00:00:00'),
+(3765, '285', 'AB-720p', 10, 'https://short.ink/KM0gfVP42\">10</button>', '', '0000-00-00 00:00:00'),
+(3766, '285', 'AB-720p', 11, 'https://short.ink/9P0z_eQHe\">11</button>', '', '0000-00-00 00:00:00'),
+(3767, '285', 'AB-720p', 12, 'https://short.ink/JiW--0IxL\">12</button>', '', '0000-00-00 00:00:00'),
+(3768, '285', 'AB-720p', 13, 'https://short.ink/6ajUhiYp8\">13</button>', '', '0000-00-00 00:00:00'),
+(3769, '285', 'AB-720p', 14, 'https://short.ink/QFvOJGBc2\">14</button>', '', '0000-00-00 00:00:00'),
+(3770, '285', 'AB-720p', 15, 'https://short.ink/mlzQloILO\">15</button>', '', '0000-00-00 00:00:00'),
+(3771, '285', 'AB-720p', 16, 'https://short.ink/MLZseAX5Q\">16</button>', '', '0000-00-00 00:00:00'),
+(3772, '285', 'AB-720p', 17, 'https://short.ink/eKP3kNytz\">17</button>', '', '0000-00-00 00:00:00'),
+(3773, '285', 'AB-720p', 18, 'https://short.ink/Z74ALbaoU\">18</button>', '', '0000-00-00 00:00:00'),
+(3774, '285', 'AB-720p', 19, 'https://short.ink/GwHWdA2MI\">19</button>', '', '0000-00-00 00:00:00'),
+(3775, '285', 'AB-720p', 20, 'https://short.ink/6PA41SsCh\">20</button>', '', '0000-00-00 00:00:00'),
+(3776, '285', 'AB-720p', 21, 'https://short.ink/ocPwmHmvy\">21</button>', '', '0000-00-00 00:00:00'),
+(3777, '285', 'AB-720p', 22, 'https://short.ink/Ipklun-dP\">22</button>', '', '0000-00-00 00:00:00'),
+(3778, '285', 'AB-720p', 23, 'https://short.ink/Cf1BF31xu\">23</button>', '', '0000-00-00 00:00:00'),
+(3779, '285', 'AB-720p', 24, 'https://short.ink/B37ub2CRM\">24</button>', '', '0000-00-00 00:00:00'),
+(3780, '285', 'AB-720p', 25, 'https://short.ink/aZtTFQ776\">25</button>', '', '0000-00-00 00:00:00'),
+(3781, '285', 'AB-720p', 26, 'https://short.ink/P8Kiof67T\">26</button>', '', '0000-00-00 00:00:00'),
+(3782, '285', 'AB-720p', 27, 'https://short.ink/1p06AFkU0\">27</button>', '', '0000-00-00 00:00:00'),
+(3783, '285', 'AB-720p', 28, 'https://short.ink/dthCI6Jsm\">28</button>', '', '0000-00-00 00:00:00'),
+(3784, '285', 'AB-720p', 29, 'https://short.ink/XqCTqqOqP\">29</button>', '', '0000-00-00 00:00:00'),
+(3785, '285', 'AB-720p', 30, 'https://short.ink/TKGQhOoym\">30</button>', '', '0000-00-00 00:00:00'),
+(3786, '285', 'AB-720p', 31, 'https://short.ink/kiho0O9i8\">31</button>', '', '0000-00-00 00:00:00'),
+(3787, '285', 'AB-720p', 32, 'https://short.ink/U5ILEd79n\">32</button>', '', '0000-00-00 00:00:00'),
+(3788, '285', 'AB-720p', 33, 'https://short.ink/K3FZwkbYH\">33</button>', '', '0000-00-00 00:00:00'),
+(3789, '285', 'AB-720p', 34, 'https://short.ink/krkQKH7oA\">34</button>', '', '0000-00-00 00:00:00'),
+(3790, '285', 'AB-720p', 35, 'https://short.ink/mbcsEqVX-\">35</button>', '', '0000-00-00 00:00:00'),
+(3791, '285', 'AB-720p', 36, 'https://short.ink/CxLwgdAee\">36</button>', '', '0000-00-00 00:00:00'),
+(3792, '285', 'AB-720p', 37, 'https://short.ink/i10vaUx1D\">37</button>', '', '0000-00-00 00:00:00'),
+(3793, '285', 'AB-720p', 38, 'https://short.ink/Dnk9u1to6\">38</button>', '', '0000-00-00 00:00:00'),
+(3794, '285', 'AB-720p', 39, 'https://short.ink/duSxTUmKd\">39</button>', '', '0000-00-00 00:00:00'),
+(3795, '285', 'AB-720p', 40, 'https://short.ink/oY8_vbWV-\">40</button>', '', '0000-00-00 00:00:00'),
+(3796, '285', 'AB-720p', 41, 'https://short.ink/O9xA2AQ9R\">41</button>', '', '0000-00-00 00:00:00'),
+(3797, '285', 'AB-720p', 42, 'https://short.ink/qk7iGE4ns\">42</button>', '', '0000-00-00 00:00:00'),
+(3798, '285', 'AB-720p', 43, 'https://short.ink/kvQcnsd18\">43</button>', '', '0000-00-00 00:00:00'),
+(3799, '285', 'AB-720p', 44, 'https://short.ink/SzEDO6tRX\">44</button>', '', '0000-00-00 00:00:00'),
 (3800, '285', 'SB-720p', 1, 'https://sbembed1.com/e/6ppkz5uc1euv.html', '', '0000-00-00 00:00:00'),
 (3801, '285', 'SB-720p', 2, 'https://sbembed1.com/e/d4nu13d6p9qh.html', '', '0000-00-00 00:00:00'),
 (3802, '285', 'SB-720p', 3, 'https://sbembed1.com/e/5130jkxp4y98.html', '', '0000-00-00 00:00:00'),
@@ -9995,7 +10016,7 @@ INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`,
 (6690, '314', 'SB-720p', 6, 'https://cloudemb.com/e/q96lw62uvafx.html', '', '0000-00-00 00:00:00'),
 (6691, '314', 'SB-720p', 7, 'https://cloudemb.com/e/05k2ll9jm6v5.html', '', '0000-00-00 00:00:00'),
 (6692, '314', 'SB-720p', 8, 'https://cloudemb.com/e/h8mcm2sjdary.html', '', '0000-00-00 00:00:00'),
-(6693, '314', 'SB-720p', 9, 'https://tubesb.com/e/pyrro1uvztid.html"', '', '0000-00-00 00:00:00'),
+(6693, '314', 'SB-720p', 9, 'https://tubesb.com/e/pyrro1uvztid.html\"', '', '0000-00-00 00:00:00'),
 (6694, '315', 'Google Drive', 1, 'https://drive.google.com/file/d/1j1sxTtzK6wpjlrW6m0RieZhgSUzHQZD8/preview', '', '0000-00-00 00:00:00'),
 (6695, '315', 'Google Drive', 2, 'https://drive.google.com/file/d/1EuDQOJ3Jf8aoFax8IYW8g4v9s6ESvFtn/preview', '', '0000-00-00 00:00:00'),
 (6696, '315', 'Google Drive', 3, 'https://drive.google.com/file/d/1opK_35PZxqTMg80nOSh691FNKAVRNHQW/preview', '', '0000-00-00 00:00:00'),
@@ -10401,7 +10422,7 @@ INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`,
 (7099, '257', 'M4U-720p', 9, 'https://www.mp4upload.com/embed-pxy6genicz4x.html', '', '2021-09-02 14:09:31'),
 (7100, '257', 'AB-720p', 9, 'https://short.ink/npVTbpRWZ', '', '2021-09-02 14:09:40'),
 (7101, '257', 'SB-720p', 9, 'https://tubesb.com/e/vc63et79wbot.html', '', '2021-09-02 14:10:13'),
-(7102, '257', 'MG-720p', 9, '"https://mega.nz/embed/njAiQDpb#G-fvCHNg3M1ZdbIUGhbBIZIrk6Qh480Ydo6FvddESSo', '', '2021-09-02 14:11:49'),
+(7102, '257', 'MG-720p', 9, '\"https://mega.nz/embed/njAiQDpb#G-fvCHNg3M1ZdbIUGhbBIZIrk6Qh480Ydo6FvddESSo', '', '2021-09-02 14:11:49'),
 (7103, '257', 'BG-360p', 9, 'https://www.blogger.com/video.g?token=AD6v5dwAUGc9ctiyPgULB-yl8o4LrWVy3YuIikQ0Aa9VogQTpd4S1KIPGRr6itpv-GdPRIisqE4PrmUncRPzQpEp8hKlcwo9232OGqqu3qR8UN8A6Rlx-9KYvHn1pYEI5XyKzPeIVxU', '', '2021-09-02 14:12:19'),
 (7104, '257', 'ACE-720p', 9, 'https://acefile.co/player/53949561', '', '2021-09-02 14:15:49'),
 (7105, '257', 'Arc-720p', 9, 'https://archive.org/download/asd-kehidasdupan-santai-apasdoteker-di-dunia-lain-09-1080p/%5Bneonime%5D_Kehidupan_Santai_Apoteker_di_Dunia_Lain_-_09-1080p.mp4', '', '2021-09-02 14:17:39'),
@@ -13166,6 +13187,12 @@ ALTER TABLE `genre`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `streaming`
 --
 ALTER TABLE `streaming`
@@ -13180,31 +13207,44 @@ ALTER TABLE `streaming`
 --
 ALTER TABLE `anime`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
+
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `download`
 --
 ALTER TABLE `download`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3086;
+
 --
 -- AUTO_INCREMENT for table `fansub`
 --
 ALTER TABLE `fansub`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `streaming`
 --
 ALTER TABLE `streaming`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9829;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
