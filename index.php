@@ -42,7 +42,6 @@
   }
 
   .topnav a:hover {
-    background-color: #fff;
     color: #bfbfbf;
     text-decoration: none;
   }
@@ -85,8 +84,12 @@
 
   .sub-menu1 li {
     display: flex;
-    width: max-content;
+    width: 10em;
     background: #333333;
+  }
+
+  .sub-menu1 li:hover {
+    background: red;
   }
 
   .submenu:hover .sub-menu1 {
