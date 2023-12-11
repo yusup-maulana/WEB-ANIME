@@ -1,3 +1,6 @@
+<link rel="icon" type="image/x-icon" href="../img/f.ico">
+<title>Admin Panel</title>
+
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />
 <script src="../new asset/jquery.min.js"></script>
@@ -318,8 +321,14 @@
 
 				<div class="form-group">
 					<div style="display:flex; margin:1em">
-						<div class="windowBuka-btn-window-streaming">Multistream</div>
-						<div class="windowBuka-btn-window-download">MultiDownload</div>
+						<div class="windowBuka-btn-window-streaming"><i class="bi bi-node-plus"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-node-plus" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8M6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5M1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+							</svg> Multistream</div>
+						<div class="windowBuka-btn-window-download">
+							<i class="bi bi-node-plus"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-node-plus" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8M6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5M1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+							</svg> MultiDownload
+						</div>
 						<div class="windowBuka-btn-window-download-utama">uploadDownload</div>
 					</div>
 
@@ -334,7 +343,11 @@
 					<label class="txtlbl">Link</label>
 					<div style="display:flex">
 						<input type="text" name="streaming_link" id="streaming_link" class="form-control" autocomplete="off" />
-						<div class="windowBuka-btn-iframe" style="padding: 1%;color: #ffffff;background: #21b15a;cursor: pointer;">Play</div>
+						<div class="windowBuka-btn-iframe" style="padding: 1%;color: #ffffff;background: #21b15a;cursor: pointer;">
+							<i class="bi bi-play"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+								<path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+							</svg>
+						</div>
 					</div>
 					<span id="error_streaming_link" class="text-danger"></span>
 				</div>
@@ -350,7 +363,7 @@
 					<select name="streaming_server" id="streaming_server" class="form-control">
 						<option value=""></option>
 					</select>
-					<input type="text" name="streaming_server_txt" id="streaming_server_txt" placeholder=" Baru" autocomplete="off" />
+					<input type="text" class="form-control" name="streaming_server_txt" id="streaming_server_txt" placeholder=" Baru" autocomplete="off" />
 					<span id="error_streaming_server" class="text-danger"></span>
 				</div>
 
@@ -812,28 +825,39 @@
 
 		$(document).on('click', '.windowBuka-btn-window-download-utama', function() {
 			var getidjudul = $('#streaming_id_judul').val();
-			if (getidjudul == "") {} else {
+			if (getidjudul == "") {
+				alert("Pilih dulu judul animenya!");
+			} else {
 				window.open("admin_utama_download.php?idjudul=" + getidjudul, "_blank", "toolbar=yes,scrollbars=yes");
 			}
 		});
 
 		$(document).on('click', '.windowBuka-btn-window-download', function() {
 			var getidjudul = $('#streaming_id_judul').val();
-			if (getidjudul == "") {} else {
+			if (getidjudul == "") {
+				alert("Pilih dulu judul animenya!");
+			} else {
 				window.open("window-download.php?idjudul=" + getidjudul, "_blank", "toolbar=yes,scrollbars=yes");
 			}
 		});
 
 		$(document).on('click', '.windowBuka-btn-window-streaming', function() {
 			var getidjudul = $('#streaming_id_judul').val();
-			if (getidjudul == "") {} else {
+			if (getidjudul == "") {
+				alert("Pilih dulu judul animenya!");
+			} else {
 				window.open("window-streaming.php?idjudul=" + getidjudul, "_blank", "toolbar=yes,scrollbars=yes");
 			}
 		});
 
 		$(document).on('click', '.windowBuka-btn-iframe', function() {
 			var linkIfr = $('#streaming_link').val();
-			window.open(linkIfr, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=400,left=400,width=650,height=400");;
+			if (linkIfr == "") {
+				alert("Masukan link video nya terlebih dahulu!")
+			} else {
+				window.open(linkIfr, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=400,left=400,width=650,height=400");
+			}
+
 		});
 
 		// fungsi isi combobox 

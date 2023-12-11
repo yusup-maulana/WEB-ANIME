@@ -121,7 +121,11 @@ echo  '</table></div>';
 
     <!-- LINK NUMBER -->
     <?php
-    $jumlah_page = ceil($get_jumlah['jumlah_row'] / $limit); // Hitung jumlah halamannya
+    if (is_array($get_jumlah) && isset($get_jumlah['jumlah_row'])) {
+      $jumlah_page = ceil($get_jumlah['jumlah_row'] / $limit);
+    } else {
+      $jumlah_page = 1;
+    }
     $jumlah_number = 3; // Tentukan jumlah link number sebelum dan sesudah page yang aktif
     $start_number = ($page > $jumlah_number) ? $page - $jumlah_number : 1; // Untuk awal link number
     $end_number = ($page < ($jumlah_page - $jumlah_number)) ? $page + $jumlah_number : $jumlah_page; // Untuk akhir link number
@@ -162,7 +166,13 @@ echo  '</table></div>';
     float: left;
     background: #333333;
     padding: 0.5em 0.5em 0.4em 0.5em;
-    border-radius: 1em;">Total <?php echo $get_jumlah['jumlah_row']; ?> </div>
+    border-radius: 1em;">Total <?php if (is_array($get_jumlah) && isset($get_jumlah['jumlah_row'])) {
+                                  echo $get_jumlah['jumlah_row'];
+                                } else {
+                                  // Penanganan kesalahan, misalnya memberi pesan atau menetapkan nilai default
+                                  echo "-";
+                                }
+                                ?> </div>
 
 </div>
 

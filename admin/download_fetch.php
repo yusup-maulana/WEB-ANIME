@@ -56,12 +56,12 @@ if (isset($_POST['search']) && $_POST['search'] == true) {
 
 echo '<div class="batas_tableme_download"><table class="table-bordered tableme_download">
     <tr>
-<th>ID</th>
-<th>Episode</th>
-<th>Server</th>
-<th>Qualty</th>
-<th>Tipe</th>
-<th>Ket</th>
+<th style="text-align:center">ID</th>
+<th style="text-align:center">Episode</th>
+<th style="text-align:center">Server</th>
+<th style="text-align:center">Qualty</th>
+<th style="text-align:center">Tipe</th>
+<th style="text-align:center">Ket</th>
 </tr>';
 
 

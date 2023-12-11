@@ -86,22 +86,25 @@ if ($statement->rowCount() > 0) {
                 <div align="center"><?php echo $error; ?></div>
                 <form method="post">
 
-                    <div style="display:flex">
-                        <label class="col-md-3 text-right">Mulai dari</label>
+
+
+                    <div class="form-group">
+                        <label class="">Mulai dari Episode</label>
                         <input type="text" value="1" class="form-control" name="eps_txt" id="eps_txt" placeholder=" Baru" autocomplete="off" />
                     </div>
 
-                    <div style="display:flex">
+                    <div class="form-group">
+                        <label class="">Nama Server</label>
                         <select name="streaming_server" id="streaming_server" class="form-control">
                             <option value=""></option>
                         </select>
                         <input type="text" value="Google Drive" name="streaming_server_txt" id="streaming_server_txt" placeholder=" Baru" autocomplete="off" />
                     </div>
 
-                    <div class="row">
-                        <label class="col-md-3 text-right">Enter Link</label>
-                        <div class="col-md-9">
-                            <textarea name="link" class="form-control" rows="10"></textarea>
+                    <div class="form-group ">
+                        <label class="">Enter Multi Link</label>
+                        <div class="">
+                            <textarea name="link" class="form-control" rows="10" placeholder="Masukkan beberapa link di sini..."></textarea>
                         </div>
                     </div>
                     <br />

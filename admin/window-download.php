@@ -81,16 +81,21 @@ if ($statement->rowCount() > 0) {
                 <div align="center"><?php echo $error; ?></div>
                 <form method="post">
 
-                    <div style="display:flex">
-                        <label class="col-md-3 text-right">Mulai dari</label>
+                    <div class="form-group">
+                        <label>Mulai dari episode</label>
                         <input type="text" value="1" class="form-control" name="eps_txt" id="eps_txt" placeholder=" Baru" autocomplete="off" />
                     </div>
 
-                    <div style="display:flex">
+                    <div class="form-group">
+                        <label>Nama Server</label>
                         <select name="server" id="server" class="form-control">
                             <option value=""></option>
-                        </select>
-                        <input type="text" value="SB" name="server_txt" id="server_txt" placeholder=" Baru" autocomplete="off" />
+                        </select> <input type="text" value="SB" name="server_txt" id="server_txt" placeholder=" Baru" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quaity</label>
+
                         <select name="quality" id="quality" class="form-control">
                             <option value="720p">720p</option>
                             <option value="480p">480p</option>
@@ -99,10 +104,10 @@ if ($statement->rowCount() > 0) {
                         </select>
                     </div>
 
-                    <div class="row">
-                        <label class="col-md-3 text-right">Enter Link</label>
-                        <div class="col-md-9">
-                            <textarea name="link" class="form-control" rows="10"></textarea>
+                    <div class="form-group">
+                        <label>Enter Link</label>
+                        <div>
+                            <textarea name="link" class="form-control" rows="10" placeholder="Masukkan beberapa link di sini..."></textarea>
                         </div>
                     </div>
                     <br />
