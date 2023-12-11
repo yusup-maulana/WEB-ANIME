@@ -3,7 +3,6 @@ date_default_timezone_set('Asia/Jakarta');
 //action.php
 
 include("../database_connection.php");
-include("database_connection.php");
 
 if (isset($_POST["action"])) {
 
