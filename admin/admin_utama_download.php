@@ -1,3 +1,7 @@
+<?php
+include("session.php");
+authenticate();
+?>
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />
 <script src="../new asset/jquery.min.js"></script>

@@ -1,6 +1,9 @@
 <link rel="icon" type="image/x-icon" href="../img/f.ico">
 <title>Admin Panel</title>
-
+<?php
+include("session.php");
+authenticate();
+?>
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />
 <script src="../new asset/jquery.min.js"></script>
@@ -1102,6 +1105,6 @@
 
 
 
-
+	<a class="btn btn-danger" href="logout.php">Logout</a>
 
 </body>

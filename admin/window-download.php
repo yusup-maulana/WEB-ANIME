@@ -1,6 +1,7 @@
 <?php
+include("session.php");
+authenticate();
 
-//index.php
 
 $error = '';
 $output = '';
