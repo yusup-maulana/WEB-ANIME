@@ -229,6 +229,18 @@
     background: linear-gradient(to right, #414345, #232526);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+
+  footer div {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  footer div h5 {
+    color: black;
+    color: #a27219;
+    font-weight: 700;
+  }
 </style>
 
 
@@ -327,11 +339,8 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 
 
   <footer>
-
-
-    <div style="text-align: center; margin:0px;padding: 0px;">
-      <h5 style="color: black;color: #a27219;font-weight: 700;"><a href="https://yusup-maulana.github.io/">© yusup-maulana.github.io</a> - 2021 v1.2</h5>
-
+    <div>
+      <h5><a href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.2</a></h5>
     </div>
   </footer>
 

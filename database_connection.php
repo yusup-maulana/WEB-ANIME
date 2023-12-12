@@ -2,7 +2,7 @@
 
 try {
   // buat koneksi dengan database
-  $connect = new PDO("mysql:host=localhost;dbname=internetclan", "root", "");
+  $connect = new PDO("mysql:host=localhost;dbname=internetclan", "root", "root");
 
 
 

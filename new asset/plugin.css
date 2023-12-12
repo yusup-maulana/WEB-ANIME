@@ -1,0 +1,13 @@
+/* Gaya CSS untuk footer normal */
+footer {
+  text-align: center;
+  margin: 0;
+  display: none;
+}
+
+/* Gaya CSS untuk elemen footer yang dianggap "deleted" */
+footer.deleted {
+  background-color: #ff0000; /* Ubah warna latar belakang ke merah */
+  color: #ffffff; /* Ubah warna teks ke putih */
+  font-size: 16px; /* Ubah ukuran teks */
+}

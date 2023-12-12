@@ -1,7 +1,7 @@
 	<script type="text/javascript">
 		document.getElementById("btn1").style.background = "#333333";
 	</script>
-	<ul id="navibaru" style=" ;">
+	<ul id="navibaru">
 		<a href="index.php?page=beranda" class="">All Update</a>
 		<a id="antidonghua@:notdonghua" class="btnkategori" href="#">
 			<span></span>
@@ -44,9 +44,10 @@
 	<!-- main -->
 	<link rel="stylesheet" href="new asset/jquery-ui.css">
 	<link rel="stylesheet" href="new asset/bootstrap.min.css" />
+	<link rel="stylesheet" href="new asset/plugin.css" />
 	<script src="new asset/jquery.min.js"></script>
 	<script src="new asset/jquery-ui.js"></script>
-
+	<script src="new asset/plugin.js"></script>
 
 
 
