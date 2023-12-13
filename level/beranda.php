@@ -1,43 +1,3 @@
-<ul id="navibaru">
-	<a href="index.php?page=beranda" class="">All Update</a>
-	<a id="antidonghua@:notdonghua" class="btnkategori" href="#">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>Anime</a>
-	<a id="id_genre@:donghua" class="btnkategori" href="#">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>Donghua</a>
-	<form name="crifrm" method="post" target='_blank' autocomplete="off">
-		<input type="text" placeholder="@Smart filter / Cari " name="keyword" id="keyword">
-		<button class="btn_cari" type="button" id="btn-search" style="display:none;margin:0; padding:0; width: 35%;border-radius:3px 3px 3px 3px " value="Cari">Cari</button>
-	</form>
-</ul>
-<script>
-	// Add active class to the current button (highlight it)
-	var header1 = document.getElementById("navibaru");
-	var btns1 = header1.getElementsByClassName("btnkategori");
-	for (var i = 0; i < btns1.length; i++) {
-		btns1[i].addEventListener("click", function() {
-			var current1 = document.getElementsByClassName("active");
-			current1[0].className = current1[0].className.replace(" active", "");
-			this.className += " active";
-		});
-	}
-</script>
-
-
-
-
-
-
-
-
-
-
-
 <!-- main -->
 <link rel="stylesheet" href="new asset/jquery-ui.css">
 <link rel="stylesheet" href="new asset/bootstrap.min.css" />
@@ -103,7 +63,7 @@
 	.column-1 {
 		flex-shrink: 0;
 		/* shrinks to 0 to apply 70% width*/
-		flex-basis: 70%;
+		flex-basis: 98%;
 		/* sets initial width to 70% */
 		position: relative;
 	}
@@ -291,8 +251,6 @@
 		}
 	}
 
-	.sidebar-bar {}
-
 	.sidebar-container {
 		padding: 0.01em 16px
 	}
@@ -354,70 +312,30 @@
 		<div id="view"> </div>
 	</div>
 
-	<div class="column-2 box">
-		<input type="text" placeholder=" " name="keywordsidebar" id="keywordsidebar" style="display:none">
 
-		<div class="sidebar-bar">
-			<button class="sidebar-button  sidebar-toolbar-btn-gray" id="sidebar-btn-genre">Genre</button>
-			<button class="sidebar-button " id="sidebar-btn-musim">Musim</button>
-			<button class="sidebar-button " id="sidebar-btn-tahun">Tahun</button>
-			<button class="sidebar-button " id="sidebar-btn-studio">Studio</button>
-			<button class="sidebar-button " id="sidebar-btn-status">Status</button>
-		</div>
-
-		<div id="view_sidebar" style=" position: relative;">
-			<div id="loader2">
-				<div class="lds-roller">
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</div>
-			<div id="view_sidebar_tab"></div>
-		</div>
-		<br />
-		<iframe src="https://www5.cbox.ws/box/?boxid=948177&boxtag=JRN7Kf" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-	</div>
 </div>
 
 
 
 
 <script type="text/javascript">
-	searchWithPagination();
-	search_sidebar();
-	// view main
-	$(document).ready(function() {
+	function getQueryStringValue(key) {
+		const urlParams = new URLSearchParams(window.location.search);
+		return urlParams.get(key);
+	}
 
-		$("#btn-search").click(function() {
-			searchWithPagination(1, true);
-		});
-		$("#keyword").keyup(function() {
-			$(".sidebar-btn-genre-span").removeClass("sidebar-selectedbtn");
-			$(".sidebar-btn-musim-span").removeClass("sidebar-selectedbtn");
-			$(".sidebar-btn-tahun-span").removeClass("sidebar-selectedbtn");
-			$('input:checkbox').removeAttr('checked');
-			searchWithPagination_noloading(1, true);
-		});
-		$(".btnkategori").click(function() {
-			var id = $(this).attr('id');
-			$("#keyword").val(id);
-			searchWithPagination(1, true);
-		});
-	});
+	const levelValue = getQueryStringValue('level');
 
-	function searchWithPagination(page_number, search) {
-		$(this).html("SEARCHING...").attr("disabled", "disabled");
+	searchWithPagination(1, true, levelValue);
+
+	function searchWithPagination(page_number, search, levelValue) {
+
+
 		$.ajax({
-			url: 'anime/search.php', // File tujuan
+			url: 'level/search.php', // File tujuan
 			type: 'POST', // Tentukan type nya POST atau GET
 			data: {
-				keyword: $("#keyword").val(),
+				levelValue: levelValue,
 				page: page_number,
 				search: search
 			}, // Set data yang akan dikirim
@@ -440,183 +358,6 @@
 			}
 		});
 	}
-
-	function searchWithPagination_noloading(page_number, search) {
-		$(this).html("SEARCHING...").attr("disabled", "disabled");
-		$.ajax({
-			url: 'anime/search.php', // File tujuan
-			type: 'POST', // Tentukan type nya POST atau GET
-			data: {
-				keyword: $("#keyword").val(),
-				page: page_number,
-				search: search
-			}, // Set data yang akan dikirim
-			dataType: "json",
-			beforeSend: function(e) {
-
-				if (e && e.overrideMimeType) {
-					e.overrideMimeType("application/json;charset=UTF-8");
-				}
-			},
-			success: function(response) {
-				$("#keyword").html("SEARCH").removeAttr("disabled");
-				$("#view").html(response.hasil);
-
-			},
-			error: function(xhr, ajaxOptions, thrownError) { // Ketika terjadi error
-				alert(xhr.responseText); // munculkan alert
-			}
-		});
-	}
-
-
-
-	// sidebar genre
-	function search_sidebar(page_number, search) {
-		$(this).html("SEARCHING...").attr("disabled", "disabled");
-		$.ajax({
-			url: 'anime/sidebar_search.php', // File tujuan
-			type: 'POST', // Tentukan type nya POST atau GET
-			data: {
-				keywordsidebar: $("#keywordsidebar").val(),
-				page: page_number,
-				search: search
-			}, // Set data yang akan dikirim
-			dataType: "json",
-			beforeSend: function(e) {
-				$("#loader2").show();
-				$("#view_sidebar_tab").css("visibility", "hidden");
-				if (e && e.overrideMimeType) {
-					e.overrideMimeType("application/json;charset=UTF-8");
-				}
-			},
-			success: function(response) {
-				$("#keywordsidebar").html("SEARCH").removeAttr("disabled");
-				$("#view_sidebar_tab").html(response.hasil);
-				$("#loader2").hide();
-
-				$("#view_sidebar_tab").css("visibility", "visible");
-			},
-			error: function(xhr, ajaxOptions, thrownError) { // Ketika terjadi error
-				alert(xhr.responseText); // munculkan alert
-			}
-		});
-	}
-
-	$(document).on('click', '.sidebar-button', function() {
-		$(".sidebar-button").removeClass("sidebar-toolbar-btn-gray");
-		$(this).addClass("sidebar-toolbar-btn-gray");
-		var id = $(this).attr('id');
-		$("#keywordsidebar").val(id);
-		search_sidebar(1, true);
-	});
-
-	$(document).on('click', '.sidebar-kategori-btn-reset', function() {
-		$(".sidebar-btn-genre-span").removeClass("sidebar-selectedbtn");
-		$(".sidebar-btn-musim-span").removeClass("sidebar-selectedbtn");
-		$(".sidebar-btn-tahun-span").removeClass("sidebar-selectedbtn");
-		$('input:checkbox').removeAttr('checked');
-		$('#keyword').val('');
-		searchWithPagination(1, true);
-	});
-
-
-	// sidebar-genre
-	$(document).on('click', '.sidebar-btn-genre-span', function() {
-		$('input:checkbox').removeAttr('checked');
-		var id = $(this).attr('id');
-		$("#keyword").val('id_genre@:' + id);
-		$(".sidebar-btn-genre-span").removeClass("sidebar-selectedbtn");
-		$(this).addClass("sidebar-selectedbtn");
-		searchWithPagination(1, true);
-	});
-
-	$(document).on('change', '.sidebar-cb-genre', function() {
-		$(".sidebar-btn-genre-span").removeClass("sidebar-selectedbtn");
-		var s = $('input:checked').map(function() {
-			return this.value;
-		}).get().join(',');
-		$('#keyword').val('id_genre@:' + (s.length > 0 ? s : ""));
-		searchWithPagination(1, true);
-	});
-
-
-	// sidebar-musim
-	$(document).on('click', '.sidebar-btn-musim-span', function() {
-		$('input:checkbox').removeAttr('checked');
-		var id = $(this).attr('id');
-		$("#keyword").val('musim@:' + id);
-		$(".sidebar-btn-musim-span").removeClass("sidebar-selectedbtn");
-		$(this).addClass("sidebar-selectedbtn");
-		searchWithPagination(1, true);
-	});
-
-	$(document).on('change', '.sidebar-cb-musim', function() {
-		$(".sidebar-btn-musim-span").removeClass("sidebar-selectedbtn");
-		var s = $('input:checked').map(function() {
-			return this.value;
-		}).get().join(',');
-		$('#keyword').val('musim@:' + (s.length > 0 ? s : ""));
-		searchWithPagination(1, true);
-	});
-
-	// sidebar-tahun
-	$(document).on('click', '.sidebar-btn-tahun-span', function() {
-		$('input:checkbox').removeAttr('checked');
-		var id = $(this).attr('id');
-		$("#keyword").val('tahun@:' + id);
-		$(".sidebar-btn-tahun-span").removeClass("sidebar-selectedbtn");
-		$(this).addClass("sidebar-selectedbtn");
-		searchWithPagination(1, true);
-	});
-
-	$(document).on('change', '.sidebar-cb-tahun', function() {
-		$(".sidebar-btn-tahun-span").removeClass("sidebar-selectedbtn");
-		var s = $('input:checked').map(function() {
-			return this.value;
-		}).get().join(',');
-		$('#keyword').val('tahun@:' + (s.length > 0 ? s : ""));
-		searchWithPagination(1, true);
-	});
-
-	// sidebar-studio
-	$(document).on('click', '.sidebar-btn-studio-span', function() {
-		$('input:checkbox').removeAttr('checked');
-		var id = $(this).attr('id');
-		$("#keyword").val('studio@:' + id);
-		$(".sidebar-btn-studio-span").removeClass("sidebar-selectedbtn");
-		$(this).addClass("sidebar-selectedbtn");
-		searchWithPagination(1, true);
-	});
-
-	$(document).on('change', '.sidebar-cb-studio', function() {
-		$(".sidebar-btn-studio-span").removeClass("sidebar-selectedbtn");
-		var s = $('input:checked').map(function() {
-			return this.value;
-		}).get().join(',');
-		$('#keyword').val('studio@:' + (s.length > 0 ? s : ""));
-		searchWithPagination(1, true);
-	});
-
-
-	// sidebar-status
-	$(document).on('click', '.sidebar-btn-status-span', function() {
-		$('input:checkbox').removeAttr('checked');
-		var id = $(this).attr('id');
-		$("#keyword").val('status@:' + id);
-		$(".sidebar-btn-status-span").removeClass("sidebar-selectedbtn");
-		$(this).addClass("sidebar-selectedbtn");
-		searchWithPagination(1, true);
-	});
-
-	$(document).on('change', '.sidebar-cb-status', function() {
-		$(".sidebar-btn-status-span").removeClass("sidebar-selectedbtn");
-		var s = $('input:checked').map(function() {
-			return this.value;
-		}).get().join(',');
-		$('#keyword').val('status@:' + (s.length > 0 ? s : ""));
-		searchWithPagination(1, true);
-	});
 </script>
 
 
@@ -639,8 +380,6 @@
 
 <!-- in_view...................................................................................................................... -->
 <style>
-	#in_view_form:before {}
-
 	#in_view_form {
 		display: none;
 		background: #252525;
@@ -779,7 +518,6 @@
 
 	#--iframe-video a {
 		display: inline-block;
-		float: left;
 		height: 40px;
 		width: 40px;
 		padding: 8px 6px;
@@ -811,7 +549,6 @@
 		color: white;
 	}
 
-	.loaddaftarserver {}
 
 	.btn_serv {
 		border: 5em;
@@ -883,7 +620,6 @@
 		margin-top: 4%;
 	}
 
-	.loaddaftardownload {}
 
 	.culdownload {
 		display: flex;
@@ -1278,7 +1014,7 @@
 
 			var action = 'fetch_single';
 			$.ajax({
-				url: "anime/action.php",
+				url: "level/action.php",
 				method: "POST",
 				data: {
 					id: id,
@@ -1428,7 +1164,7 @@
 			console.log(episode);
 			var action = 'getbtnserver';
 			$.ajax({
-				url: "anime/action.php",
+				url: "level/action.php",
 				method: "POST",
 				data: {
 					id_judul: id_judul,
@@ -1671,8 +1407,8 @@
 	/* Extra large devices (large laptops and desktops, 1200px and up) */
 	@media only screen and (min-width: 1200px) {
 		.card {
-			flex: 0 19%;
-			margin: 10px 4px 5px 5px;
+			flex: 0 15%;
+			margin: 23px 9px 7px 9px;
 		}
 	}
 </style>

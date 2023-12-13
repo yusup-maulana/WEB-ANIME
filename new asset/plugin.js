@@ -1,45 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Simpan teks asli dari elemen footer
+var detectFooterChangesModule = (function () {
   var originalText = "© yusup-maulana.github.io - 2021 v1.2";
 
-  // Fungsi untuk mendeteksi perubahan pada elemen footer
   function detectFooterChanges() {
-    // Peroleh elemen footer
     var footerElement = document.querySelector("footer div h5 a");
 
-    // Periksa apakah elemen footer atau link tidak ditemukan
     if (!footerElement || footerElement.textContent.trim() !== originalText) {
       var footer = document.querySelector("footer");
       if (footer) {
         footer.classList.add("deleted");
       }
-
       window.location.href = "https://yusup-maulana.github.io/";
     }
   }
 
-  // Panggil fungsi deteksi perubahan
-  detectFooterChanges();
-
-  // Fungsi untuk memantau perubahan pada elemen
-  function observeChanges(mutationsList, observer) {
-    for (var mutation of mutationsList) {
-      if (mutation.type === "childList" || mutation.type === "characterData") {
-        detectFooterChanges();
+  function detectFooterChanges2() {
+    console.log("Perubahan properti style terdeteksi.");
+    var footerElement = document.querySelector("footer");
+    if (footerElement) {
+      var computedStyle = window.getComputedStyle(footerElement);
+      var displayValue = computedStyle.getPropertyValue("display");
+      var visibilityValue = computedStyle.getPropertyValue("visibility");
+      var opacityValue = computedStyle.getPropertyValue("opacity");
+      var fontSizeValue = computedStyle.getPropertyValue("font-size");
+      if (
+        displayValue === "none" ||
+        visibilityValue === "hidden" ||
+        (opacityValue === "0") | (parseFloat(fontSizeValue) < 1)
+      ) {
+        window.location.href = "https://yusup-maulana.github.io/";
       }
+      var children = footerElement.querySelectorAll("*");
+      children.forEach(function (child) {
+        var computedStyle = window.getComputedStyle(child);
+        var displayValue = computedStyle.getPropertyValue("display");
+        var visibilityValue = computedStyle.getPropertyValue("visibility");
+        var opacityValue = computedStyle.getPropertyValue("opacity");
+        var fontSizeValue = computedStyle.getPropertyValue("font-size");
+        if (
+          displayValue === "none" ||
+          visibilityValue === "hidden" ||
+          opacityValue === "0" ||
+          parseFloat(fontSizeValue) < 1
+        ) {
+          window.location.href = "https://yusup-maulana.github.io/";
+        }
+      });
     }
   }
 
-  // Buat objek MutationObserver
-  var observer = new MutationObserver(observeChanges);
-
-  // Konfigurasi untuk memantau perubahan pada elemen dan anak-anaknya
-  var config = {
-    childList: true,
-    subtree: true,
-    characterData: true,
+  function init() {
+    detectFooterChanges();
+    detectFooterChanges2();
+  }
+  return {
+    init: init,
   };
-
-  // Mulai memantau elemen
-  observer.observe(document.body, config);
-});
+})();

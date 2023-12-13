@@ -4,7 +4,7 @@
 
 ## Tampilan Front-end yang Elegan
 
-Ketika pertama kali mengunjungi halaman depan template, pengunjung akan langsung disuguhi dengan tampilan full-width slider yang elegan. Di sini, Anda dapat menampilkan sejumlah video unggulan yang ingin Anda tampilkan kepada pengguna Anda.
+Ketika pertama kali mengunjungi halaman depan template, pengunjung akan langsung disuguhi dengan tampilan full-width dan pilihan sidebar yang elegan. Di sini secara default, menampilkan sejumlah video terupdate.
 
 ## Tampilan yang unik dan single Page
 
@@ -17,8 +17,8 @@ Memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun, genr
 
 ## admin page:
 
-usernam : admin
-password : admin
+- username : admin
+- password : admin
 
 ## Teknologi:
 

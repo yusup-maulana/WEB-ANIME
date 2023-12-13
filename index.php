@@ -89,11 +89,20 @@
   }
 
   .sub-menu1 li:hover {
-    background: red;
+    background: #1e2328;
+  }
+
+  .sub-menu1 li>a:hover {
+    color: #cdbe91;
   }
 
   .submenu:hover .sub-menu1 {
     display: block;
+  }
+
+  .sub-menu1 li>a {
+    width: -webkit-fill-available;
+    text-align: left;
   }
 
   /* END
@@ -254,10 +263,23 @@
       <li class="submenu">
         <a href="#">Level</a>
         <ul class="sub-menu1">
-          <li><a href="index.php?page=">Boring</a></li>
-          <li><a href="index.php?page=">Menarik</a></li>
-          <li><a href="index.php?page=">Wajib Tonton</a></li>
-          <li><a href="index.php?page=">Best Of The Best</a></li>
+          <li><a href="index.php?page=level&level=1">Boring</a></li>
+          <li><a href="index.php?page=level&level=2">Menarik</a></li>
+          <li><a href="index.php?page=level&level=3">Wajib Tonton</a></li>
+          <li><a href="index.php?page=level&level=4">Best Of The Best</a></li>
+          <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="#">Type</a>
+        <ul class="sub-menu1">
+          <li><a href="index.php?page=level&level=1">Movie</a></li>
+          <li><a href="index.php?page=level&level=2">TV</a></li>
+          <li><a href="index.php?page=level&level=3">ONA</a></li>
+          <li><a href="index.php?page=level&level=4">OVA</a></li>
+          <li><a href="index.php?page=level&level=4">TV BD</a></li>
+          <li><a href="index.php?page=level&level=4">Movie BD</a></li>
+          <li><a href="index.php?page=level&level=4">Special</a></li>
           <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
         </ul>
       </li>
@@ -313,8 +335,8 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
         include "anime/beranda.php";
         break;
 
-      case 'about':
-        include "about.php";
+      case 'level':
+        include "level/beranda.php";
         break;
 
 

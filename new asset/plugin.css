@@ -1,8 +1,6 @@
 /* Gaya CSS untuk footer normal */
-footer {
-  text-align: center;
-  margin: 0;
-  display: none;
+footer h5 {
+  /* display: none; */
 }
 
 /* Gaya CSS untuk elemen footer yang dianggap "deleted" */
