@@ -273,31 +273,19 @@
       <li class="submenu">
         <a href="#">Type</a>
         <ul class="sub-menu1">
-          <li><a href="index.php?page=level&level=1">Movie</a></li>
-          <li><a href="index.php?page=level&level=2">TV</a></li>
-          <li><a href="index.php?page=level&level=3">ONA</a></li>
-          <li><a href="index.php?page=level&level=4">OVA</a></li>
-          <li><a href="index.php?page=level&level=4">TV BD</a></li>
-          <li><a href="index.php?page=level&level=4">Movie BD</a></li>
-          <li><a href="index.php?page=level&level=4">Special</a></li>
+          <li><a href="index.php?page=tipe&tipe=movie">Movie</a></li>
+          <li><a href="index.php?page=tipe&tipe=tv">TV</a></li>
+          <li><a href="index.php?page=tipe&tipe=ona">ONA</a></li>
+          <li><a href="index.php?page=tipe&tipe=ova">OVA</a></li>
+          <li><a href="index.php?page=tipe&tipe=bd">TV BD</a></li>
+          <li><a href="index.php?page=tipe&tipe=movie bd">Movie BD</a></li>
+          <li><a href="index.php?page=tipe&tipe=special">Special</a></li>
           <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
         </ul>
       </li>
       <li><a href="/WEB-ANIME/admin/admin_utama.php">Admin</a></li>
     </ul>
   </nav>
-
-  <!-- <div class="topnav" id="myTopnav">
-    <a href="index.php?page=beranda" id="btn1" style="color:#e4e4e4">Home</a>
-    <a href="index.php?page=" id="btn2">Level</a>
-    <!-- <a href="index.php?page=about" id="btn6">Fansub</a>
-  <a href="index.php?page=about" id="btn6">About</a>
-  <a href="index.php?page=" id="btn2" >Join</a> -->
-
-  <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()" style="padding: 0">
-      <img src="img/menu.png" style="width: 12%;position: fixed;    top: 0px;    right: 5px; z-index: 99" />
-    </a>
-  </div> -->
 
   <div style="padding-left:16px; width:100%;    overflow: auto; background: #232526;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
@@ -330,7 +318,6 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     <?php
     $page = (isset($_GET['page'])) ? $_GET['page'] : "main";
     switch ($page) {
-        #v/
       case 'beranda':
         include "anime/beranda.php";
         break;
@@ -339,6 +326,9 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
         include "level/beranda.php";
         break;
 
+      case 'tipe':
+        include "tipe/beranda.php";
+        break;
 
 
 
