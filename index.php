@@ -283,7 +283,7 @@
           <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
         </ul>
       </li>
-      <li><a href="/WEB-ANIME/admin/admin_utama.php">Admin</a></li>
+      <li><a href="admin/admin_utama.php">Admin</a></li>
     </ul>
   </nav>
 

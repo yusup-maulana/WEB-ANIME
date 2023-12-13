@@ -179,7 +179,7 @@ if (isset($_POST["user"])) {
 
         <button type="submit" name="btn_kirim">Log In</button>
         <div style="margin: 11px 2px 2px 2px;">
-            <button class="btn"><a href="/WEB-ANIME/">Open Web</a></button>
+            <button class="btn"><a href="../">Open Web</a></button>
             <p style="    font-size: 10px;text-align: center;">
                 <a href="https://yusup-maulana.github.io/">© yusup-maulana.github.io</a> - 2021 v1.2
             </p>

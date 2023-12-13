@@ -1,3 +1,17 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// Fungsi untuk memeriksa apakah skrip sudah dimuat
+		$('.main-menu1>li:nth-child(1)>a').css({
+			background: '#1e2328',
+			color: '#cdbe91',
+			'box-shadow': 'inset 0 0 2px #cdbe91',
+			'border-image': 'linear-gradient(to bottom, #c8aa6d, #7a5c29)',
+			'border-image-slice': 1,
+			'border-width': '1px'
+		});
+
+	});
+</script>
 <ul id="navibaru">
 	<a href="index.php?page=beranda" class="">All Update</a>
 	<a id="antidonghua@:notdonghua" class="btnkategori" href="#">

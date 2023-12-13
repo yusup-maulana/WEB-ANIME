@@ -1,3 +1,25 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// Fungsi untuk memeriksa apakah skrip sudah dimuat
+		$('.main-menu1>li:nth-child(2)>a').css({
+			background: '#1e2328',
+			color: '#cdbe91',
+			'box-shadow': 'inset 0 0 2px #cdbe91',
+			'border-image': 'linear-gradient(to bottom, #c8aa6d, #7a5c29)',
+			'border-image-slice': 1,
+			'border-width': '1px'
+		});
+		const levelValue2 = getQueryStringValue('level');
+		$('.main-menu1>li:nth-child(2)>.sub-menu1>li:nth-child(' + levelValue2 + ')>a').css({
+			background: '#1e2328',
+			color: '#cdbe91',
+			'box-shadow': 'inset 0 0 2px #cdbe91',
+			'border-image': 'linear-gradient(to bottom, #c8aa6d, #7a5c29)',
+			'border-image-slice': 1,
+			'border-width': '1px'
+		});
+	});
+</script>
 <!-- main -->
 <link rel="stylesheet" href="new asset/jquery-ui.css">
 <link rel="stylesheet" href="new asset/bootstrap.min.css" />

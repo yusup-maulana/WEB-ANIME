@@ -4,6 +4,40 @@
 	</form>
 </ul>
 <script>
+	document.addEventListener("DOMContentLoaded", function() {
+		$('.main-menu1>li:nth-child(3)>a').css({
+			background: '#1e2328',
+			color: '#cdbe91',
+			'box-shadow': 'inset 0 0 2px #cdbe91',
+			'border-image': 'linear-gradient(to bottom, #c8aa6d, #7a5c29)',
+			'border-image-slice': 1,
+			'border-width': '1px'
+		});
+		let tpe = getQueryStringValue('tipe');
+		if (tpe === "movie") {
+			tpe = "1";
+		} else if (tpe === "tv") {
+			tpe = "2";
+		} else if (tpe === "ona") {
+			tpe = "3";
+		} else if (tpe === "ova") {
+			tpe = "4";
+		} else if (tpe === "bd") {
+			tpe = "5";
+		} else if (tpe === "movie bd") {
+			tpe = "6";
+		} else if (tpe === "special") {
+			tpe = "7";
+		}
+		$('.main-menu1>li:nth-child(3)>.sub-menu1>li:nth-child(' + tpe + ')>a').css({
+			background: '#1e2328',
+			color: '#cdbe91',
+			'box-shadow': 'inset 0 0 2px #cdbe91',
+			'border-image': 'linear-gradient(to bottom, #c8aa6d, #7a5c29)',
+			'border-image-slice': 1,
+			'border-width': '1px'
+		});
+	});
 	var header1 = document.getElementById("navibaru");
 	var btns1 = header1.getElementsByClassName("btnkategori");
 	for (var i = 0; i < btns1.length; i++) {
@@ -14,8 +48,6 @@
 		});
 	}
 </script>
-
-
 
 
 
