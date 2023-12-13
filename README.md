@@ -44,7 +44,7 @@ Memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun, genr
 ## Support if you like:
 
 <p align="center">
-  <a href="https://saweria.co/yusupmaulana">thanks
+  <a href="https://saweria.co/yusupmaulana">
 <img width="48" height="48" src="https://img.icons8.com/doodle/48/coffee-to-go.png" alt="coffee-to-go"/>
   </a>
 
