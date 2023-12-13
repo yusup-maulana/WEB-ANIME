@@ -1,6 +1,6 @@
 ## Demo
 
-Sedang diproses
+[Click here for demo](https://free.glccontrol.com/)
 
 # Template Web Khusus Layanan Video Pihak Ketiga: Kesederhanaan yang Memukau
 
