@@ -9,6 +9,7 @@
   <title>Aliansi anime subbed</title>
   <meta name="description" content="Animeclan merupakan website streaming / menonton dan mendownload anime dengan gaya, ber-subtitle indo dan english" />
 
+  <script defer src="new asset/imageobserve.js"></script>
 </head>
 
 <style>
@@ -165,7 +166,6 @@
     border-width: 1px;
   }
 
-  #navibaru a:nth-child(1) {}
 
   #navibaru a span {
     position: absolute;
@@ -249,6 +249,66 @@
     color: black;
     color: #a27219;
     font-weight: 700;
+  }
+
+
+
+
+
+  .card .img1 {
+    background: linear-gradient(136deg, #36383a, #1d2328, #36383a);
+    background-size: 600% 600% !important;
+    -webkit-animation: Animationimgsplash 2s ease infinite;
+    -moz-animation: Animationimgsplash 2s ease infinite;
+    animation: Animationimgsplash 2s ease infinite;
+  }
+
+  .img1 img {
+    object-fit: cover;
+    filter: blur(20px);
+    transition: all 3s;
+  }
+
+  @-webkit-keyframes Animationimgsplash {
+    0% {
+      background-position: 0% 55%
+    }
+
+    50% {
+      background-position: 100% 46%
+    }
+
+    100% {
+      background-position: 0% 55%
+    }
+  }
+
+  @-moz-keyframes Animationimgsplash {
+    0% {
+      background-position: 0% 55%
+    }
+
+    50% {
+      background-position: 100% 46%
+    }
+
+    100% {
+      background-position: 0% 55%
+    }
+  }
+
+  @keyframes Animationimgsplash {
+    0% {
+      background-position: 0% 55%
+    }
+
+    50% {
+      background-position: 100% 46%
+    }
+
+    100% {
+      background-position: 0% 55%
+    }
   }
 </style>
 
@@ -336,10 +396,7 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
       default:
         include 'anime/beranda.php';
     }
-
     ?>
-
-
   </div>
 
 
@@ -355,9 +412,10 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
       <h5><a href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.2</a></h5>
     </div>
   </footer>
+  <!-- Tambahkan skrip ini di bagian bawah body atau di akhir file HTML -->
+  <script>
 
-
-
+  </script>
 </body>
 
 </html>

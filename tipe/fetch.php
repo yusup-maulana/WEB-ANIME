@@ -191,7 +191,7 @@ while ($row = $sql->fetch()) {
   echo '
     <div class="card in_view" id="' . $row["id"] . '">
     <a href="#">
-     <div class="img1" style="background-image: url(' . $row["gambar"] . ');"></div>
+    <div class="img1"><img  src="img/img.png" data-src="' . $row["gambar"] . '" loading="lazy" onerror="this.onerror=null;this.src=\' ' . $row["gambar"] . '\';"//></div>
     <div class="title"><span>' . $row["judul"] . '</span></div>
     <div class="text"></div>
     <a href="#">

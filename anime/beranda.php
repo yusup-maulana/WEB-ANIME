@@ -403,7 +403,7 @@
 
 
 <script type="text/javascript">
-	searchWithPagination();
+	searchWithPagination(1, true);
 	search_sidebar();
 	// view main
 	$(document).ready(function() {
@@ -425,7 +425,8 @@
 		});
 	});
 
-	function searchWithPagination(page_number, search) {
+
+	async function searchWithPagination(page_number, search) {
 		$(this).html("SEARCHING...").attr("disabled", "disabled");
 		$.ajax({
 			url: 'anime/search.php', // File tujuan
