@@ -399,7 +399,7 @@
 			<div id="view_sidebar_tab"></div>
 		</div>
 		<br />
-		<iframe src="https://www5.cbox.ws/box/?boxid=948177&boxtag=JRN7Kf" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+		<iframe title="chatFrame" src="https://www5.cbox.ws/box/?boxid=948177&boxtag=JRN7Kf" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
 	</div>
 </div>
 
@@ -1153,7 +1153,7 @@
 		<!-- iframe -->
 		<span id="--title-anime">Episode 12</span>
 		<div class="--show-video">
-			<iframe allowfullscreen="true" id="iframeid" frameborder="0" height="360" marginheight="0" marginwidth="0" scrolling="no" src="" width="100%"> </iframe>
+			<iframe title="videoframe" allowfullscreen="true" id="iframeid" frameborder="0" height="360" marginheight="0" marginwidth="0" scrolling="no" src="" width="100%"> </iframe>
 		</div>
 		<div class="tabs --tab-eps" id="--iframe-video"> <!--tombol akan muncul disini--></div>
 
@@ -1238,13 +1238,13 @@
 		}
 		var f = $(".--show-video");
 		$(".ganti-eps").click(function() {
-			f.html('<div class="--responsive"><iframe onload="hideLoadingiframe()" id="iframeid" src="' + anime[parseInt($(this).data("id"))] + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"  ></iframe></div>');
+			f.html('<div class="--responsive"><iframe title="videoframe" onload="hideLoadingiframe()" id="iframeid" src="' + anime[parseInt($(this).data("id"))] + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"  ></iframe></div>');
 		});
 
 		// btn klik ganti eps 
 		$("body").on("click", ".ganti-eps", function() {
 			var f2 = $(".--show-video");
-			f2.html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe onload="hideLoadingiframe()" id="iframeid"  src="' + $(this).data("id") + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
+			f2.html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe title="videoframe" onload="hideLoadingiframe()" id="iframeid"  src="' + $(this).data("id") + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
 			if ($(this).hasClass("selectedbtniframe")) {} else {
 				$(".ganti-eps").removeClass('selectedbtniframe');
 				$(this).addClass('selectedbtniframe');
@@ -1255,7 +1255,7 @@
 		// btn klik ganti server
 		$("body").on("click", ".ganti-serv", function() {
 			var f2 = $(".--show-video");
-			f2.html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe onload="hideLoadingiframe()" id="iframeid"   src="' + $(this).data("id") + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
+			f2.html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe title="videoframe" onload="hideLoadingiframe()" id="iframeid"   src="' + $(this).data("id") + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
 			if ($(this).hasClass("selectedbtniframe")) {} else {
 				$(".ganti-serv").removeClass('selectedbtniframe');
 				$(this).addClass('selectedbtniframe');
@@ -1356,7 +1356,7 @@
 						iii = ii;
 					}
 					$('#--title-anime').html("Episode " + data.vepisode[iii]);
-					$('.--show-video').html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe id="iframeid" onload="hideLoadingiframe()" src="' + data.vlink[iii] + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
+					$('.--show-video').html('<div  id="loader4"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div> <div class="--responsive"><iframe title="videoframe" id="iframeid" onload="hideLoadingiframe()" src="' + data.vlink[iii] + '" allowfullscreen="true" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="100%" height="360"></iframe></div>');
 					$(".ganti-eps:last").addClass('selectedbtniframe');
 
 					//load btn server streaming
