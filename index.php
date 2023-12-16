@@ -14,7 +14,7 @@
 
 <style>
   body {
-    background: #333 !important;
+    background-image: linear-gradient(231deg, rgba(233, 233, 233, 0.01) 0%, rgba(233, 233, 233, 0.01) 25%, rgba(10, 10, 10, 0.01) 25%, rgba(10, 10, 10, 0.01) 50%, rgba(237, 237, 237, 0.01) 50%, rgba(237, 237, 237, 0.01) 75%, rgba(200, 200, 200, 0.01) 75%, rgba(200, 200, 200, 0.01) 100%), linear-gradient(344deg, rgba(2, 2, 2, 0.03) 0%, rgba(2, 2, 2, 0.03) 20%, rgba(10, 10, 10, 0.03) 20%, rgba(10, 10, 10, 0.03) 40%, rgba(100, 100, 100, 0.03) 40%, rgba(100, 100, 100, 0.03) 60%, rgba(60, 60, 60, 0.03) 60%, rgba(60, 60, 60, 0.03) 80%, rgba(135, 135, 135, 0.03) 80%, rgba(135, 135, 135, 0.03) 100%), linear-gradient(148deg, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 14.286%, rgba(15, 15, 15, 0.03) 14.286%, rgba(15, 15, 15, 0.03) 28.572%, rgba(74, 74, 74, 0.03) 28.572%, rgba(74, 74, 74, 0.03) 42.858%, rgba(175, 175, 175, 0.03) 42.858%, rgba(175, 175, 175, 0.03) 57.144%, rgba(16, 16, 16, 0.03) 57.144%, rgba(16, 16, 16, 0.03) 71.42999999999999%, rgba(83, 83, 83, 0.03) 71.43%, rgba(83, 83, 83, 0.03) 85.71600000000001%, rgba(249, 249, 249, 0.03) 85.716%, rgba(249, 249, 249, 0.03) 100.002%), linear-gradient(122deg, rgba(150, 150, 150, 0.01) 0%, rgba(150, 150, 150, 0.01) 20%, rgba(252, 252, 252, 0.01) 20%, rgba(252, 252, 252, 0.01) 40%, rgba(226, 226, 226, 0.01) 40%, rgba(226, 226, 226, 0.01) 60%, rgba(49, 49, 49, 0.01) 60%, rgba(49, 49, 49, 0.01) 80%, rgba(94, 94, 94, 0.01) 80%, rgba(94, 94, 94, 0.01) 100%), linear-gradient(295deg, rgba(207, 207, 207, 0.02) 0%, rgba(207, 207, 207, 0.02) 25%, rgba(47, 47, 47, 0.02) 25%, rgba(47, 47, 47, 0.02) 50%, rgba(142, 142, 142, 0.02) 50%, rgba(142, 142, 142, 0.02) 75%, rgba(76, 76, 76, 0.02) 75%, rgba(76, 76, 76, 0.02) 100%), linear-gradient(73deg, rgba(81, 81, 81, 0.03) 0%, rgba(81, 81, 81, 0.03) 12.5%, rgba(158, 158, 158, 0.03) 12.5%, rgba(158, 158, 158, 0.03) 25%, rgba(136, 136, 136, 0.03) 25%, rgba(136, 136, 136, 0.03) 37.5%, rgba(209, 209, 209, 0.03) 37.5%, rgba(209, 209, 209, 0.03) 50%, rgba(152, 152, 152, 0.03) 50%, rgba(152, 152, 152, 0.03) 62.5%, rgba(97, 97, 97, 0.03) 62.5%, rgba(97, 97, 97, 0.03) 75%, rgba(167, 167, 167, 0.03) 75%, rgba(167, 167, 167, 0.03) 87.5%, rgba(22, 22, 22, 0.03) 87.5%, rgba(22, 22, 22, 0.03) 100%), linear-gradient(90deg, hsl(137, 0%, 23%), hsl(137, 0%, 23%));
   }
 
   /* START
@@ -111,6 +111,9 @@
 
 
 
+  #navibaru {
+    padding-top: 1em;
+  }
 
   #navibaru form {
     background: #404040;
@@ -347,12 +350,6 @@
     </ul>
   </nav>
 
-  <div style="padding-left:16px; width:100%;    overflow: auto; background: #232526;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-">
-    <!--  <center class="logo1"><img src="img/internetclan.ico"/></center> -->
-    <br />
   </div>
 
   <script>
@@ -390,6 +387,9 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
         include "tipe/beranda.php";
         break;
 
+      case 'link':
+        include "footer/link.php";
+        break;
 
 
       case 'beranda':
@@ -405,17 +405,157 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 
 
 
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 
-  <footer>
-    <div>
-      <h5><a href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.2</a></h5>
-    </div>
+
+    .footer {
+      position: relative;
+      width: 100%;
+      background: #1d2328;
+      min-height: 100px;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .social-icon,
+    .menu {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    .social-icon__item,
+    .menu__item {
+      list-style: none;
+    }
+
+    .social-icon__link {
+      font-size: 2rem;
+      color: #fff;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    .social-icon__link:hover {
+      transform: translateY(-10px);
+    }
+
+    .menu__link {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+      text-decoration: none;
+      opacity: 0.75;
+      font-weight: 300;
+    }
+
+    .menu__link:hover {
+      opacity: 1;
+    }
+
+    .footer p {
+      color: #fff;
+      margin: 15px 0 10px 0;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  </style>
+  <footer class="footer">
+    <ul class="social-icon">
+    </ul>
+    <ul class="menu">
+    </ul>
+
+    <p><a style="color: #ffffff;" href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.2</a></p>
   </footer>
-  <!-- Tambahkan skrip ini di bagian bawah body atau di akhir file HTML -->
-  <script>
-
-  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+<script>
+  async function footer_link() {
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    };
+
+    try {
+      const response = await fetch('footer/action_link.php', option);
+      const responseData = await response.json();
+      const datafromServer = responseData.data;
+      const menu = document.querySelector('.menu');
+      datafromServer.forEach(item => {
+        const li = document.createElement('li');
+        const b = document.createElement('b');
+        b.className = 'menu__link';
+        b.textContent = item.nama;
+        b.id = item.id;
+        li.appendChild(b);
+        menu.appendChild(li);
+      });
+      addclickfooter_link();
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  footer_link();
+
+
+  async function addclickfooter_link() {
+    const menu__links = document.querySelectorAll(".menu__link");
+    menu__links.forEach(function(menu__link) {
+      menu__link.addEventListener('click', function() {
+        let id = this.id; // Pastikan ID sudah diatur pada elemen <a>
+        window.location.href = "index.php?page=link&link=" + id;
+      });
+    });
+  }
+
+
+
+
+  async function footer_medsos() {
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    };
+
+    try {
+      const response = await fetch('footer/action_medsos.php', option);
+      const responseData = await response.json();
+      const datafromServer = responseData.data;
+      const menu = document.querySelector('.social-icon');
+      datafromServer.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'social-icon__item';
+        const a = document.createElement('a');
+        a.className = 'social-icon__link';
+        a.innerHTML = '<ion-icon name="logo-' + item.nama + '"></ion-icon>';
+        a.href = item.link;
+        li.appendChild(a);
+        menu.appendChild(li);
+      });
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  footer_medsos();
+</script>
 
 </html>

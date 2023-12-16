@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-authenticate();
+authenticate('');
 
 
 $error = '';

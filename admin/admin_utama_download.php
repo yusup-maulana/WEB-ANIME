@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-authenticate();
+authenticate('');
 ?>
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />

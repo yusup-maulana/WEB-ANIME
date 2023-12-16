@@ -1,9 +1,21 @@
 <link rel="icon" type="image/x-icon" href="../img/f.ico">
 <title>Admin Panel</title>
 <?php
+include("navigasi.php");
 include("session.php");
-authenticate();
+authenticate('');
 ?>
+<script>
+	const navSetAktif = document.getElementById("nav1");
+	navSetAktif.classList.add('activeNav');
+	navSetAktif.removeAttribute('href');
+	const nav2 = document.getElementById("nav2");
+	nav2.href = "footer/utama.php";
+	const nav3 = document.getElementById("nav3");
+	nav3.href = "medsos/utama.php";
+	const nav4 = document.getElementById("nav4");
+	nav4.href = "logout.php";
+</script>
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />
 <script src="../new asset/jquery.min.js"></script>
@@ -1105,6 +1117,5 @@ authenticate();
 
 
 
-	<a class="btn btn-danger" href="logout.php">Logout</a>
 
 </body>

@@ -8,11 +8,11 @@ function isLoggedIn()
 }
 
 // Fungsi untuk memeriksa dan melindungi halaman dengan autentikasi
-function authenticate()
+function authenticate($link)
 {
     if (!isLoggedIn()) {
         // Jika pengguna tidak login, arahkan ke index.php atau halaman login lainnya
-        header("Location: index.php");
+        header("Location: " . $link . "index.php");
         exit();
     }
 }

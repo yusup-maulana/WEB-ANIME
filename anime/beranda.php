@@ -69,6 +69,10 @@
 		var scriptElement = document.querySelector('script[src="' + scriptSrc + '"]');
 		if (scriptElement) {
 			console.log("Skrip sudah dimuat.");
+			setTimeout(function() {
+				// Panggil modul untuk mendeteksi perubahan footer
+				detectFooterChangesModule.init();
+			}, 5000);
 		} else {
 			console.log("Skrip belum dimuat.");
 			var newScript = document.createElement('script');

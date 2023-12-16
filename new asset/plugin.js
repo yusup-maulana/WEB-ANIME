@@ -2,7 +2,8 @@ var detectFooterChangesModule = (function () {
   var originalText = "© yusup-maulana.github.io - 2021 v1.2";
 
   function detectFooterChanges() {
-    var footerElement = document.querySelector("footer div h5 a");
+    console.log("Perubahan properti  terdeteksi.");
+    var footerElement = document.querySelector("footer p a");
 
     if (!footerElement || footerElement.textContent.trim() !== originalText) {
       var footer = document.querySelector("footer");

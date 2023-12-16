@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 10:09 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Host: localhost
+-- Waktu pembuatan: 16 Des 2023 pada 18.15
+-- Versi server: 5.6.53-ndb-7.4.33-cluster-gpl
+-- Versi PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anime`
+-- Struktur dari tabel `anime`
 --
 
 CREATE TABLE `anime` (
@@ -48,10 +48,10 @@ CREATE TABLE `anime` (
   `ket` longtext NOT NULL,
   `level` varchar(1) NOT NULL,
   `tanggal_update` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `anime`
+-- Dumping data untuk tabel `anime`
 --
 
 INSERT INTO `anime` (`id`, `judul`, `alternative_judul`, `gambar`, `studio`, `id_genre`, `tanggalrilis`, `tahun`, `musim`, `id_fansub`, `durasi`, `status`, `jadwal`, `iu`, `tipe`, `tagar`, `totaleps`, `ket`, `level`, `tanggal_update`) VALUES
@@ -180,7 +180,7 @@ INSERT INTO `anime` (`id`, `judul`, `alternative_judul`, `gambar`, `studio`, `id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_tonton`
+-- Struktur dari tabel `data_tonton`
 --
 
 CREATE TABLE `data_tonton` (
@@ -188,12 +188,12 @@ CREATE TABLE `data_tonton` (
   `id_user` varchar(15) NOT NULL,
   `id_anime` varchar(10) NOT NULL,
   `episode` int(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_user`
+-- Struktur dari tabel `data_user`
 --
 
 CREATE TABLE `data_user` (
@@ -201,12 +201,12 @@ CREATE TABLE `data_user` (
   `nama` varchar(30) NOT NULL,
   `level` varchar(2) NOT NULL,
   `email` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `download`
+-- Struktur dari tabel `download`
 --
 
 CREATE TABLE `download` (
@@ -219,10 +219,10 @@ CREATE TABLE `download` (
   `tanggal_update` datetime NOT NULL,
   `tipe` varchar(10) NOT NULL,
   `ket` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `download`
+-- Dumping data untuk tabel `download`
 --
 
 INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`, `tanggal_update`, `tipe`, `ket`) VALUES
@@ -3240,7 +3240,7 @@ INSERT INTO `download` (`id`, `id_judul`, `server`, `episode`, `link`, `quality`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fansub`
+-- Struktur dari tabel `fansub`
 --
 
 CREATE TABLE `fansub` (
@@ -3248,10 +3248,10 @@ CREATE TABLE `fansub` (
   `nama` varchar(35) NOT NULL,
   `gambar` varchar(50) NOT NULL,
   `ket` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fansub`
+-- Dumping data untuk tabel `fansub`
 --
 
 INSERT INTO `fansub` (`id`, `nama`, `gambar`, `ket`) VALUES
@@ -3281,16 +3281,40 @@ INSERT INTO `fansub` (`id`, `nama`, `gambar`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genre`
+-- Struktur dari tabel `footer`
+--
+
+CREATE TABLE `footer` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(35) NOT NULL,
+  `ket` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `footer`
+--
+
+INSERT INTO `footer` (`id`, `nama`, `ket`) VALUES
+(30, 'Privacy', '<h1><span style=\"color: rgb(187, 187, 187);\">Privacy Policy</span></h1><p><br></p><h2><span style=\"color: rgb(187, 187, 187);\">Who we are</span></h2><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Our website address is: https://xxxxxx</span></p><p><span style=\"color: rgb(187, 187, 187);\">We doesnâ€™t host any content on it own server and just linking to or embedding content that was uploaded to popular Online Video hosting sites like dailymotion.com, Youtube.com, Google Drive, ZShare.net, cloudy, netu.tv and such sites.</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">All trademarks, Videos, trade names, service marks, copyrighted work, logos referenced herein belong to their respective owners/companies. our web site is not responsible for what other people upload to 3rd party sites. We urge all copyright owners, to recognize that the links contained within this site are located somewhere else on the web or video embedded are from other various site like included above!.</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">If you have any legal issues please contact appropriate media file owners / hosters. This privacy policy is intended to inform you about the types of information gathered by us when you visit our website.</span></p><p><br></p>'),
+(31, 'DMCA', '<h1><span style=\"color: rgb(187, 187, 187);\">DMCA</span></h1><p><br></p><p><strong style=\"color: rgb(187, 187, 187);\">Our Website </strong><span style=\"color: rgb(187, 187, 187);\">is an online website service provider like defined in Digital Millenium Copyright Act. We respect the copyright laws and will protect the right of every copyright owner seriously. If you are the owner of any content showed on this website and you dont want to allow us to use the content, then you are very able to tell us by email to&nbsp;</span><strong style=\"color: rgb(187, 187, 187);\">your@email.com</strong><span style=\"color: rgb(187, 187, 187);\">&nbsp;so that we can identify and take necessary action. We cannot take any action if you dont give us any information about it, so please send us an email with the details like:</span></p><p><br></p><p><br></p><ul><li><span style=\"color: rgb(187, 187, 187);\">Specification about copyright of content which claimed to be infringed,</span></li><li><span style=\"color: rgb(187, 187, 187);\">If you claimed about infringement from some copyright works in one email, please write the list about it in detail including website urls contain exact content that claimed to be infringing,</span></li><li><span style=\"color: rgb(187, 187, 187);\">Give us information about your name, phone, office address and email address also to allow us contact you if neccessary,</span></li><li><span style=\"color: rgb(187, 187, 187);\">We really expect that the sender would be real copyright owner and not the third party or agents,</span></li><li><span style=\"color: rgb(187, 187, 187);\">Information written must be accurate and under the law of counterfeiting.</span></li></ul><p><br></p><p><br></p><p><br></p><p><br></p>'),
+(32, 'Bantuan', '<h1><span style=\"color: rgb(187, 187, 187);\">BANTUAN</span></h1><p><br></p><h3><span style=\"color: rgb(187, 187, 187);\">Rekomendasi Browser</span></h3><p><a href=\"https://www.google.com/chrome/\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\"><strong>Google Chrome</strong></a><strong style=\"color: rgb(187, 187, 187);\">&nbsp;â€“&nbsp;</strong><a href=\"https://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\"><strong>Firefox</strong></a><strong style=\"color: rgb(187, 187, 187);\">&nbsp;â€“&nbsp;</strong><a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\"><strong>Edge</strong></a></p><h3><span style=\"color: rgb(187, 187, 187);\">Rekomendasi DNS</span></h3><p><a href=\"https://1.1.1.1/dns/\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\"><strong>Cloudflare</strong></a><strong style=\"color: rgb(187, 187, 187);\">&nbsp;â€“&nbsp;</strong><a href=\"https://developers.google.com/speed/public-dns\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\"><strong>Google DNS</strong></a></p><p><span style=\"color: rgb(187, 187, 187);\">Note : Gunakan rekomendasi browser dan dns dari kami untuk meminimalisir gangguan yang terjadi selama menonton anime/series di sini, jika anda menggunakan browser, dns atau browser extension diluar rekomendasi kami maka saat terjadi error itu merupakan kesalahan anda sendiri.</span></p><p><br></p><p><br></p><h3><span class=\"ql-size-large\" style=\"color: rgb(187, 187, 187);\">Cara Mengatasi Video Buffering disitus </span></h3><p><span style=\"color: rgb(187, 187, 187);\">Rekomendasi Minimal kecepatan Internet untuk streaming diserver </span></p><p><span style=\"color: rgb(187, 187, 187);\">Test kecepatan anda menggunakan&nbsp;</span><a href=\"https://speed.cloudflare.com/\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\">Speedtest dari Cloudflare</a><span style=\"color: rgb(187, 187, 187);\">&nbsp;untuk menghindari manipulasi speedtest dari internet provider anda.</span></p><p><strong style=\"color: rgb(187, 187, 187);\">INDIHOME/TELKOMSEL/ICONET/BUMN LAINNYA</strong></p><p><span style=\"color: rgb(187, 187, 187);\">Speed 20-50 Mbps â€“ Resolusi 360p</span></p><p><span style=\"color: rgb(187, 187, 187);\">Speed 100 Mbps â€“ Resolusi 720p</span></p><p><span style=\"color: rgb(187, 187, 187);\">Jika masih terjadi buffering, silahkan restart router hingga menemukan IP/PORT yang normal, Indihome terkenal dengan me-limit atau throttling bandwidth ke server yang tidak menggunakan TELIN CDN(produk milik Telkom/Indihome).</span></p><p><strong style=\"color: rgb(187, 187, 187);\">BIZNET â€“ CBN â€“ MyRepublic â€“ LinkNet â€“ MNC Play â€“ XL Home / LAINNYA</strong></p><p><span style=\"color: rgb(187, 187, 187);\">Speed 20-50 Mbps â€“ 720p-1080p</span></p><p><span style=\"color: rgb(187, 187, 187);\">Speed 50 Mbps â€“ 1440p</span></p><p><span style=\"color: rgb(187, 187, 187);\">Speed 100 Mbps-175 Mbps â€“ 2160p</span></p><p><span style=\"color: rgb(187, 187, 187);\">Lalu anda juga dapat menggunakan VPN dengan server terdekat, atau gunakan DNS&nbsp;</span><a href=\"https://1.1.1.1/\" target=\"_blank\" style=\"color: rgb(187, 187, 187);\">1.1.1.1</a><span style=\"color: rgb(187, 187, 187);\">&nbsp;atau Cloudflare WARP dan sejenisnya.</span></p><p><br></p><p><br></p><h3><span class=\"ql-size-large\" style=\"color: rgb(187, 187, 187);\">404 NO VIDEO FOUND</span></h3><p><span style=\"color: rgb(187, 187, 187);\"><img src=\"https://i.imgur.com/JYGahSF.png\" height=\"auto\" width=\"100%\"></span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">SILAHKAN REFRESH HALAMAN ATAU BERSIHKAN SEMUA EXTENSION BROWSER ANDA, GUNAKAN BROWSER CHROME UNTUK PC/ANDROID DAN SAFARI UNTUK PENGGUNA IOS</span></p><h3><span style=\"color: rgb(187, 187, 187);\">Cara Mengetahui Sebuah Film/Serial TV yang memiliki Subtitle</span></h3><p><span style=\"color: rgb(187, 187, 187);\">Biasanya semua anime yang tersedia disitus sudah memiliki subtitle bahasa Indonesia, namun ada juga beberapa anime yang belum memiliki subtitle bahasa Indonesia, nah untuk mengecek ada atau tidaknya subtitle tersedia silahkan lihat pada gambar dibawah ini.</span></p><p><br></p><p><span class=\"ql-size-large\" style=\"color: rgb(187, 187, 187);\">Memilih Server dan Episode atau Video Alternatif</span></p><p><span style=\"color: rgb(187, 187, 187);\">Jika video error atau dirasa lemot/buffering kamu bisa memilih alternatif video yang terdapat dibagian bawahnya atau jika masih buffering atau lemot periksa kecepatan internet kamu dan turunkan kualitas dari video tersebut.</span></p><p class=\"ql-align-justify\"><br></p><h3><br></h3><h3><span class=\"ql-size-large\" style=\"color: rgb(187, 187, 187);\">Cara Download Anime</span></h3><h3><span style=\"color: rgb(187, 187, 187);\">Untuk mendownload film kamu bisa langsung scroll kebawah hingga menemukan bagian Links Download, dan pilih link untuk mendownload anime. </span></h3><p><br></p><p><br></p><p><br></p><h3><span class=\"ql-size-large\" style=\"color: rgb(187, 187, 187);\">Cara Request/Lapor </span></h3><h3><span style=\"color: rgb(187, 187, 187);\">Untuk request atau lapor film/serial yang error maupun mempunyai kualitas buruk atau subtitle yang delay silahkan contact kami&nbsp;dengan link terkait.</span></h3>'),
+(34, 'Contact', '\n    <style>\n        body {\n          \n            color: white;\n            font-family: Arial, sans-serif;\n        }\n\n        .contact-form {\n            max-width: 400px;\n            margin: 50px auto;\n        }\n\n        .form-group {\n            margin-bottom: 20px;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 8px;\n        }\n\n        input, textarea {\n            width: 100%;\n            padding: 10px;\n            box-sizing: border-box;\n            margin-bottom: 10px;\n        }\n\n        button {\n            background-color: #4CAF50; /* Ubah sesuai keinginan Anda */\n            color: white;\n            padding: 10px 15px;\n            border: none;\n            cursor: pointer;\n        }\n    </style>\n\n\n    <div class=\"contact-form\">\n        <h2>Formulir Kontak</h2>\n        <form action=\"#\" method=\"post\">\n            <div class=\"form-group\">\n                <label for=\"nama\">Nama:</label>\n                <input type=\"text\" id=\"nama\" name=\"nama\" required>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"email\">Email:</label>\n                <input type=\"email\" id=\"email\" name=\"email\" required>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"pesan\">Pesan:</label>\n                <textarea id=\"pesan\" name=\"pesan\" rows=\"4\" required></textarea>\n            </div>\n            <div class=\"form-group\">\n                <button type=\"submit\">Kirim Pesan</button>\n            </div>\n        </form>\n    </div>\n\n\n'),
+(35, 'Req', '<p><span style=\"color: rgb(187, 187, 187);\">-Silahkan Comment untuk Request Anime dengan menyertakan link MyAnimeList.net juga dengan Format Berikut :</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Request Anime :</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Judul : Sword Art Online: Extra Edition</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Link Myanimelist : https://myanimelist.net/anime/20021/Sword_Art_Online__Extra_Edition</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Terima kasih ðŸ™‚</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">&nbsp;</span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">*Proses Upload Request membutuhkan waktu lama, karena kami mengutamakan Anime baru yang Update</span></p><p><br></p>'),
+(36, 'Disclaimers', '<p><span style=\"color: rgb(187, 187, 187);\">No video content is held on our servers and we are in no way affiliated with the video content. The video content that is displayed originates from social video websites, such as, but not limited to Veoh, YouTube, Dailymotion and Myspace TV. In case of copyright infringement, </span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">please directly contact the responsible parties. we operates as an index and database of anime content found publicly available on the internet, in principle conducting in the same way as yahoo. However,we strongly believes in the protection of intellectual property and would be willing to assist when possible and applicable. </span></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">Users who upload to these websites agree not to upload illegal content when creating their user accounts. </span></p><p><br></p><p><br></p><p><span style=\"color: rgb(187, 187, 187);\">we does not accept responsibility for content hosted on third party websites, nor do we upload videos ourselves or encourage others to do so. The videos are streamed directly from the third-party video sharing services mentioned above. All other trademarks, logos, and images are the property of their respective and rightful owners.</span></p><p><br></p>');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `genre`
 --
 
 CREATE TABLE `genre` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `genre`
+-- Dumping data untuk tabel `genre`
 --
 
 INSERT INTO `genre` (`id`, `nama`) VALUES
@@ -3339,7 +3363,7 @@ INSERT INTO `genre` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komentar`
+-- Struktur dari tabel `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -3347,12 +3371,12 @@ CREATE TABLE `komentar` (
   `id_anime` varchar(15) NOT NULL,
   `keterangan` longtext NOT NULL,
   `id_user` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -3360,10 +3384,10 @@ CREATE TABLE `login` (
   `user` varchar(35) DEFAULT NULL,
   `pass` varchar(8) DEFAULT NULL,
   `level` varchar(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`id`, `user`, `pass`, `level`) VALUES
@@ -3372,7 +3396,31 @@ INSERT INTO `login` (`id`, `user`, `pass`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `streaming`
+-- Struktur dari tabel `medsos`
+--
+
+CREATE TABLE `medsos` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(35) NOT NULL,
+  `link` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `medsos`
+--
+
+INSERT INTO `medsos` (`id`, `nama`, `link`) VALUES
+(2, 'linkedin', 'https://blablaba'),
+(3, 'whatsapp', 'https://blablaba'),
+(4, 'twitter', 'https://blablaba'),
+(5, 'youtube', 'https://blablaba'),
+(6, 'facebook', 'https://blablaba'),
+(7, 'instagram', 'https://blablaba');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `streaming`
 --
 
 CREATE TABLE `streaming` (
@@ -3383,10 +3431,10 @@ CREATE TABLE `streaming` (
   `link` longtext NOT NULL,
   `lapor` varchar(1) NOT NULL,
   `tanggal_update` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `streaming`
+-- Dumping data untuk tabel `streaming`
 --
 
 INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`, `tanggal_update`) VALUES
@@ -13157,89 +13205,113 @@ INSERT INTO `streaming` (`id`, `id_judul`, `server`, `episode`, `link`, `lapor`,
 --
 
 --
--- Indexes for table `anime`
+-- Indeks untuk tabel `anime`
 --
 ALTER TABLE `anime`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_user`
+-- Indeks untuk tabel `data_user`
 --
 ALTER TABLE `data_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `download`
+-- Indeks untuk tabel `download`
 --
 ALTER TABLE `download`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fansub`
+-- Indeks untuk tabel `fansub`
 --
 ALTER TABLE `fansub`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `genre`
+-- Indeks untuk tabel `footer`
+--
+ALTER TABLE `footer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `streaming`
+-- Indeks untuk tabel `medsos`
+--
+ALTER TABLE `medsos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `streaming`
 --
 ALTER TABLE `streaming`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `anime`
+-- AUTO_INCREMENT untuk tabel `anime`
 --
 ALTER TABLE `anime`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
 
 --
--- AUTO_INCREMENT for table `data_user`
+-- AUTO_INCREMENT untuk tabel `data_user`
 --
 ALTER TABLE `data_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `download`
+-- AUTO_INCREMENT untuk tabel `download`
 --
 ALTER TABLE `download`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3086;
 
 --
--- AUTO_INCREMENT for table `fansub`
+-- AUTO_INCREMENT untuk tabel `fansub`
 --
 ALTER TABLE `fansub`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `genre`
+-- AUTO_INCREMENT untuk tabel `footer`
+--
+ALTER TABLE `footer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT untuk tabel `genre`
 --
 ALTER TABLE `genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
--- AUTO_INCREMENT for table `login`
+-- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `streaming`
+-- AUTO_INCREMENT untuk tabel `medsos`
+--
+ALTER TABLE `medsos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `streaming`
 --
 ALTER TABLE `streaming`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9829;
