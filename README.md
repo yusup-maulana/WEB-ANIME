@@ -6,8 +6,10 @@
 
 ![Alt Text](https://yusup-maulana.github.io/IMG/websiteanime/webanime2.webp)
 
-## Tampilan Front-end yang Elegan
+## Tampilan Front-end yang Elegan dengan performa luar biasa
 
+![Alt Text](https://raw.githubusercontent.com/yusup-maulana/WEB-ANIME/main/img/seo.jpeg)
+[Click here for insight](https://pagespeed.web.dev/analysis/https-free-glccontrol-com/yybz4rsb8k?form_factor=desktop)
 Ketika pertama kali mengunjungi halaman depan template, pengunjung akan langsung disuguhi dengan tampilan full-width dan pilihan sidebar yang elegan. Di sini secara default, menampilkan sejumlah video terupdate.
 
 ## Tampilan yang unik dan single Page
