@@ -40,6 +40,7 @@ Memiliki fleksibilitas untuk menambahkan banyak kategori berdasarkan tahun, genr
 - Font Awesome 4.7.0
 - Select2
 - cbox
+- quill editor
 
 ## Support if you like:
 
