@@ -2,7 +2,6 @@ var detectFooterChangesModule = (function () {
   var originalText = "© yusup-maulana.github.io - 2021 v1.2";
 
   function detectFooterChanges() {
-    console.log("Perubahan properti  terdeteksi.");
     var footerElement = document.querySelector("footer p a");
 
     if (!footerElement || footerElement.textContent.trim() !== originalText) {
@@ -10,12 +9,12 @@ var detectFooterChangesModule = (function () {
       if (footer) {
         footer.classList.add("deleted");
       }
+      console.log("Perubahan properti  terdeteksi.");
       window.location.href = "https://yusup-maulana.github.io/";
     }
   }
 
   function detectFooterChanges2() {
-    console.log("Perubahan properti style terdeteksi.");
     var footerElement = document.querySelector("footer");
     if (footerElement) {
       var computedStyle = window.getComputedStyle(footerElement);
@@ -28,6 +27,7 @@ var detectFooterChangesModule = (function () {
         visibilityValue === "hidden" ||
         (opacityValue === "0") | (parseFloat(fontSizeValue) < 1)
       ) {
+        console.log("Perubahan properti style terdeteksi.");
         window.location.href = "https://yusup-maulana.github.io/";
       }
       var children = footerElement.querySelectorAll("*");
@@ -43,6 +43,7 @@ var detectFooterChangesModule = (function () {
           opacityValue === "0" ||
           parseFloat(fontSizeValue) < 1
         ) {
+          console.log("Perubahan properti style terdeteksi.");
           window.location.href = "https://yusup-maulana.github.io/";
         }
       });
