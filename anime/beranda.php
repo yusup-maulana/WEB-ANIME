@@ -102,6 +102,15 @@
 
 <!-- view...................................................................................................................... -->
 <style>
+	.pagination>.disabled>a,
+	.pagination>.disabled>a:focus,
+	.pagination>.disabled>a:hover,
+	.pagination>.disabled>span,
+	.pagination>.disabled>span:focus,
+	.pagination>.disabled>span:hover {
+		color: #000;
+	}
+
 	.container {
 		display: flex;
 		padding-right: 0px !important;
