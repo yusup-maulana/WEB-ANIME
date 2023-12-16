@@ -418,42 +418,32 @@ echo  '</div>';
     <?php
     if ($page == 1) { // Jika page adalah page ke 1, maka disable link PREV
     ?>
-      <li class="disabled"><a href="#">First</a></li>
-      <li class="disabled"><a href="#">&laquo;</a></li>
+      <li class="disabled"><a href="#page-1">First</a></li>
+      <li class="disabled"><a href="#next-page-1">&laquo;</a></li>
     <?php
     } else { // Jika page bukan page ke 1
       $link_prev = ($page > 1) ? $page - 1 : 1;
     ?>
-      <li><a href="javascript:void(0);" onclick="searchWithPagination(1, false)">First</a></li>
-      <li><a href="javascript:void(0);" onclick="searchWithPagination(<?php echo $link_prev; ?>, false)">&laquo;</a></li>
+      <li><a href="#page-1" onclick="searchWithPagination(1, false)">First</a></li>
+      <li><a href="#next-page-1" onclick="searchWithPagination(<?php echo $link_prev; ?>, false)">&laquo;</a></li>
     <?php
     }
-
-
-
     ?>
-
-
-
     <!-- LINK NUMBER -->
     <?php
     $jumlah_page = ceil($get_jumlah['jumlah_row'] / $limit); // Hitung jumlah halamannya
     $jumlah_number = 3; // Tentukan jumlah link number sebelum dan sesudah page yang aktif
     $start_number = ($page > $jumlah_number) ? $page - $jumlah_number : 1; // Untuk awal link number
     $end_number = ($page < ($jumlah_page - $jumlah_number)) ? $page + $jumlah_number : $jumlah_page; // Untuk akhir link number
-
     for ($i = $start_number; $i <= $end_number; $i++) {
       $link_active = ($page == $i) ? ' class="active"' : '';
     ?>
-      <li<?php echo $link_active; ?>><a href="javascript:void(0);" onclick="searchWithPagination(<?php echo $i; ?>, false)"><?php echo $i; ?></a></li>
+      <li<?php echo $link_active; ?>><a href="#page-number" onclick="searchWithPagination(<?php echo $i; ?>, false)"><?php echo $i; ?></a></li>
       <?php
     }
       ?>
-
       <!-- LINK NEXT AND LAST -->
       <?php
-      // Jika page sama dengan jumlah page, maka disable link NEXT nya
-      // Artinya page tersebut adalah page terakhir 
       if ($page == $jumlah_page) { // Jika page terakhir
       ?>
         <li class="disabled"><a href="#">&raquo;</a></li>
@@ -462,33 +452,10 @@ echo  '</div>';
       } else { // Jika Bukan page terakhir
         $link_next = ($page < $jumlah_page) ? $page + 1 : $jumlah_page;
       ?>
-        <li><a href="javascript:void(0);" onclick="searchWithPagination(<?php echo $link_next; ?>, false)">&raquo;</a></li>
-        <li><a href="javascript:void(0);" onclick="searchWithPagination(<?php echo $jumlah_page; ?>, false)">Last</a></li>
+        <li><a href="#prev-page-last" onclick="searchWithPagination(<?php echo $link_next; ?>, false)">&raquo;</a></li>
+        <li><a href="#page-last" onclick="searchWithPagination(<?php echo $jumlah_page; ?>, false)">Last</a></li>
       <?php
       }
-
-      function DateToIndo($date)
-      {
-        $BulanIndo = array(
-          "Januari", "Februari", "Maret", "April",
-          "Mei", "Juni", "Juli", "Agustus", "September", "Oktober",
-          "November", "Desember"
-        );
-
-        // memisahkan format tahun menggunakan substring
-        $tahun = substr($date, 0, 4);
-
-        // memisahkan format bulan menggunakan substring
-        $bulan = substr($date, 5, 2);
-
-        // memisahkan format tanggal menggunakan substring
-        $tgl = substr($date, 8, 2);
-
-        $result = $tgl . "-" . $BulanIndo[(int)$bulan - 1] . "-" . $tahun;
-
-        return ($result);
-      }
-
       ?>
   </ul>
 
