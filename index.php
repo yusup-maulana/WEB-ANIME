@@ -479,7 +479,7 @@
     <ul class="menu">
     </ul>
 
-    <p><a style="color: #ffffff;" href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.2</a></p>
+    <p><a style="color: #ffffff;" href="https://yusup-maulana.github.io/">© yusup-maulana.github.io - 2021 v1.3</a></p>
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

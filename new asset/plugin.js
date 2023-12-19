@@ -1,5 +1,5 @@
 var detectFooterChangesModule = (function () {
-  var originalText = "© yusup-maulana.github.io - 2021 v1.2";
+  var originalText = "© yusup-maulana.github.io - 2021 v1.3";
 
   function detectFooterChanges() {
     var footerElement = document.querySelector("footer p a");
