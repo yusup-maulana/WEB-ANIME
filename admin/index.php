@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-    <!-- Design by foolishdeveloper.com -->
     <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"> -->
     <!--Stylesheet-->
-    <style media="screen">
+    <style>
         *,
         *:before,
         *:after {
@@ -29,14 +30,7 @@
             background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
         }
 
-        .background {
-            width: 430px;
-            height: 520px;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 50%;
-        }
+
 
         .background .shape {
             height: 200px;
@@ -113,6 +107,14 @@
             cursor: pointer;
         }
     </style>
+    <style>
+        @media only screen and (max-width: 600px) {
+            form {
+                width: 100% !important;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -151,8 +153,6 @@ if (isset($_POST["user"])) {
 
 
 <body>
-    <div class="background">
-    </div>
     <form method="post" action="login_process.php">
         <h3>Login Here</h3>
         <?php

@@ -34,6 +34,7 @@ async function searchAndObserve(page_number, search) {
         observeImages();
         console.log("o"); // Indikasi fungsi observeImages dieksekusi setelah perubahan pada DOM
         resolve();
+        console.log("searchAndObserve");
       });
 
       // Batasi pengamatan pada elemen body dan sub tree
@@ -47,7 +48,3 @@ async function searchAndObserve(page_number, search) {
     console.error("Terjadi kesalahan:", error);
   }
 }
-
-window.onload = function () {
-  searchAndObserve(/* berikan argumen sesuai kebutuhan */);
-};

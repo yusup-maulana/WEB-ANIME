@@ -415,11 +415,21 @@
 
 
 
-<script type="text/javascript">
-	searchWithPagination(1, true);
-	search_sidebar();
+<script>
 	// view main
 	$(document).ready(function() {
+		search_sidebar();
+
+		searchWithPagination(1, true)
+			.then((searchResult) => {
+				searchAndObserve();
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+
+
+
 
 		$("#btn-search").click(function() {
 			searchWithPagination(1, true);
@@ -440,7 +450,6 @@
 
 
 	async function searchWithPagination(page_number, search) {
-		$(this).html("SEARCHING...").attr("disabled", "disabled");
 		$.ajax({
 			url: 'anime/search.php', // File tujuan
 			type: 'POST', // Tentukan type nya POST atau GET
@@ -1622,8 +1631,10 @@
 		}
 
 		#myTopnav {
-			position: fixed;
-			z-index: 5
+			position: sticky;
+			z-index: 5;
+			top: 0;
+			background: #0000008c;
 		}
 
 		#in_view_form {

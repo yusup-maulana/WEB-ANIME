@@ -2,6 +2,7 @@
 include("session.php");
 authenticate('');
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../new asset/jquery-ui.css">
 <link rel="stylesheet" href="../new asset/bootstrap.min.css" />
 <script src="../new asset/jquery.min.js"></script>
@@ -21,10 +22,43 @@ authenticate('');
 		top: 2%;
 		left: 2%;
 	}
+
+	.downframe {
+		display: flex;
+	}
+
+	.downframe #user_form_download {
+		width: 47%;
+		padding: 1em;
+	}
+
+	#view_download {
+		margin: auto;
+		width: 63%;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.downframe {
+			display: flex;
+			flex-direction: column-reverse;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.downframe #user_form_download {
+			width: 96%;
+		}
+
+		#view_download {
+			width: 96%;
+		}
+	}
 </style>
-<div style="display:flex;">
-	<div style="margin: auto;width: 63%;" id="view_download"> <?php include "download_fetch.php"; ?> </div>
-	<form method="post" id="user_form_download" style="width: 47%;padding:1em;">
+<div class="downframe">
+	<div id="view_download"> <?php include "download_fetch.php"; ?> </div>
+	<form method="post" id="user_form_download">
 		<input type="text" name="id_download" id="id_download" class="form-control" />
 
 		<div class="form-group">

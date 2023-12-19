@@ -413,8 +413,13 @@
 	}
 
 	const tipe = getQueryStringValue('tipe');
-
-	searchWithPagination(1, false, tipe);
+	searchWithPagination(1, true, tipe)
+		.then((searchResult) => {
+			searchAndObserve();
+		})
+		.catch((error) => {
+			console.error(error);
+		});
 	search_sidebar(1, false, tipe);
 	// view main
 	$(document).ready(function() {
@@ -433,7 +438,7 @@
 		});
 	});
 
-	function searchWithPagination(page_number, search, tipe) {
+	async function searchWithPagination(page_number, search, tipe) {
 		$(this).html("SEARCHING...").attr("disabled", "disabled");
 		$.ajax({
 			url: 'tipe/search.php', // File tujuan
@@ -1547,7 +1552,12 @@
 			margin: 10px 4px 5px 5px;
 		}
 
-
+		#myTopnav {
+			position: sticky;
+			z-index: 5;
+			top: 0;
+			background: #0000008c;
+		}
 
 		#navibaru {
 			visibility: hidden !important;

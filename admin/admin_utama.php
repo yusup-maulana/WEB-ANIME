@@ -1,4 +1,5 @@
 <link rel="icon" type="image/x-icon" href="../img/f.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
 <?php
 include("navigasi.php");
@@ -153,6 +154,71 @@ authenticate('');
 
 	.windowBuka-btn-window-download-utama:active {
 		background: #11657d;
+	}
+
+	.bungkuscrifm {}
+
+	.bungkuscrifm .crifrm {
+		background: #404040;
+		width: 65%;
+		padding: 7px;
+		margin: 0;
+	}
+
+	#view {
+		width: 65%;
+		background: #404040;
+		color: whitesmoke;
+		overflow: auto;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.batas {
+			flex-flow: wrap;
+			height: 87%;
+		}
+
+		#batas-dalam {
+			width: 98%;
+			height: 69%;
+		}
+
+		.batas-dalam-2 {
+			width: 100%;
+			height: 100%;
+			margin-top: 31em;
+		}
+
+		#view {
+			width: 100%;
+		}
+
+		.bungkuscrifm .crifrm {
+			width: 100%;
+		}
+
+		.bungkuscrifm .crifrm input {
+			width: 96% !important;
+		}
+
+		.bungkuscrifm {
+			position: relative;
+			top: -115px;
+			padding: 0px;
+			margin: 0;
+			width: 100%;
+		}
+
+		#view_streaming {
+			position: relative;
+			top: 119px;
+		}
+
+		#user_form_streaming {
+			position: relative;
+			top: 152px;
+			height: 56%;
+		}
 	}
 </style>
 
@@ -405,26 +471,17 @@ authenticate('');
 		<p>Are you sure you want to Delete this data?</p>
 	</div>
 
-
-	<form name="crifrm" style="background: #404040;
-    width: 65%;
-	padding: 7px;
-    margin: 0;" method="post" target='_blank' autocomplete="off"><input type="hidden" name="laporan" value="pdf">
-		<input type="text" class="form-control" style="width: 17%;
+	<div class="bungkuscrifm">
+		<form name="crifrm" class="crifrm" method="post" target='_blank' autocomplete="off"><input type="hidden" name="laporan" value="pdf">
+			<input type="text" class="form-control" style="width: 17%;
     background: black;
     color: white;
     margin-left: 1em;
     text-indent: 1em;" placeholder="Cari " name="keyword" id="keyword">
-		<button class="btn_cari" type="button" id="btn-search" style="display:none;margin:0; padding:0; width: 35%;border-radius:3px 3px 3px 3px " value="Cari">Cari</button>
-	</form>
-	<div style="    width: 65%;
-   
-    background: #404040;
-    color: whitesmoke;
-    overflow: auto;" id="view"> <?php include "admin_fetch.php"; ?> </div>
-
-
-
+			<button class="btn_cari" type="button" id="btn-search" style="display:none;margin:0; padding:0; width: 35%;border-radius:3px 3px 3px 3px " value="Cari">Cari</button>
+		</form>
+		<div id="view"> <?php include "admin_fetch.php"; ?> </div>
+	</div>
 
 
 

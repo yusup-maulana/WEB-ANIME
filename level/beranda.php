@@ -348,11 +348,15 @@
 
 	const levelValue = getQueryStringValue('level');
 
-	searchWithPagination(1, true, levelValue);
+	searchWithPagination(1, true, levelValue)
+		.then((searchResult) => {
+			searchAndObserve();
+		})
+		.catch((error) => {
+			console.error(error);
+		});
 
-	function searchWithPagination(page_number, search, levelValue) {
-
-
+	async function searchWithPagination(page_number, search, levelValue) {
 		$.ajax({
 			url: 'level/search.php', // File tujuan
 			type: 'POST', // Tentukan type nya POST atau GET
@@ -1352,8 +1356,19 @@
 		}
 
 		#myTopnav {
-			position: fixed;
-			z-index: 5
+			position: sticky;
+			z-index: 5;
+			top: 0;
+			background: #0000008c;
+		}
+
+		.fetch-card {
+			padding: 0em;
+			padding-top: 3em;
+		}
+
+		#view b {
+			margin-top: 0.2em !important;
 		}
 
 		#in_view_form {

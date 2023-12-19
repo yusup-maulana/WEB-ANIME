@@ -9,7 +9,7 @@
   <title>Aliansi anime subbed</title>
   <meta name="description" content="Animeclan merupakan website streaming / menonton dan mendownload anime dengan gaya, ber-subtitle indo dan english" />
 
-  <script defer src="new asset/imageobserve.js"></script>
+  <script type="text/javascript" src="new asset/imageobserve.js"></script>
 </head>
 
 <style>
